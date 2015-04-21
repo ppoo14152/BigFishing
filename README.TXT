@@ -8,5 +8,5 @@ PROJECT TITLE: Big Fishing: 2015
 PURPOSE OF PROJECT: Academic
 VERSION or DATE: 0.01
 HOW TO START THIS PROJECT:
-AUTHORS: Daniel Josué Zúñiga
+AUTHORS: Daniel Josué Zúñiga, Jesus Alejandro Lara
 USER INSTRUCTIONS:
