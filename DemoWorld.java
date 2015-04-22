@@ -1,14 +1,9 @@
 import greenfoot.*;
 
-/**
- * A little demo world to show you how this works.
- * 
- * @author Sven van Nigtevecht
- */
 public class DemoWorld extends ScrollWorld
 {
     /**
-     * Constructor for objects of class DemoWorld.
+     * Constructor de la clase DemoWorld.
      */
     public DemoWorld()
     {
