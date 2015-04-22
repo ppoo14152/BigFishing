@@ -8,23 +8,25 @@ import greenfoot.*;
  */
 public class Ola extends ScrollActor
 {
-    private GreenfootImage background;
-    private int CoorY, velocidad;
+    private GreenfootImage background1, background2;
+    private int velocidad;
+    
     /**
      * Act - do whatever the Ola wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Ola(String img, int y, int v){
-        CoorY = y;
+    public Ola(String img, int v){
         velocidad = v;
-        background = new GreenfootImage(img);
-        this.setImage(background);
+        background2 = new GreenfootImage(img);
+        background1 = new GreenfootImage(img);
+        this.setImage(background1);
    
     }
     public void act() 
     {
        move(velocidad);
-       if(this.isAtEdge())
-            this.setGlobalLocation( 0, CoorY);
+       if(this.isAtEdge()){
+            this.setLocation(0, this.getY());
+       }
     }    
 }
