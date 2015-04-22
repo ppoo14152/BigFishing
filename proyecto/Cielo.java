@@ -14,9 +14,9 @@ public class Cielo extends ScrollActor
      * Act - do whatever the Cielo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Cielo()
+    public Cielo(int r, int g, int b)
     {
-        sky.setColor(new Color(0, 255, 255));
+        sky.setColor(new Color(r, g, b));
         sky.fillRect(0, 0, 800, 400);
         setImage(sky);
     }
