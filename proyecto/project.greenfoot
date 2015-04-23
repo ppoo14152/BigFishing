@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Apr 23 11:44:24 CDT 2015
+#Thu Apr 23 13:33:30 CDT 2015
 target2.width=80
 target8.name=Ola
 target5.naviview.expanded=true
@@ -79,6 +79,7 @@ target8.showInterface=false
 target7.typeParameters=
 target2.name=Insecto
 readme.editor.height=768
+class.Nube.superclass=ScrollActor
 target6.name=Ola
 target6.naviview.expanded=true
 target9.height=50
@@ -148,14 +149,14 @@ readme.editor.x=0
 target7.width=90
 target6.editor.height=622
 class.Barco.superclass=ScrollActor
-dependency3.from=ScrollWorld
 target9.editor.height=709
+dependency3.from=ScrollWorld
 target1.typeParameters=
 target3.width=90
 target4.width=100
 target8.typeParameters=
-target1.editor.y=1
 dependency7.from=DemoWorld
+target1.editor.y=1
 target1.editor.x=1
 target5.width=80
 dependency4.to=Cielo
