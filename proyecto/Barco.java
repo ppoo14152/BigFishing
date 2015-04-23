@@ -43,11 +43,11 @@ public class Barco extends ScrollActor
             grados--;
     }
     private void modificaGrados(){
-        if(grados == 13){
+        if(grados == 17){
             direccion = false;
         }
         else{
-            if(grados == -5){
+            if(grados == -13){
                 direccion = true;
             }
         }      

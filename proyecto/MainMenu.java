@@ -23,6 +23,7 @@ public class MainMenu extends ScrollWorld
         fondo.fill();
         this.setBackground(fondo);
         addObject(new Ola("OlaAtras.png", 2), 0, 500);
+        addObject(new Barco(), 650,350);
         addObject(new Ola("OlaL.png", 1), 0, 510);
         
         
