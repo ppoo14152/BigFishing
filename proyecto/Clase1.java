@@ -14,6 +14,6 @@ public class Clase1 extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        // Yolo clayolo te Gane xDXDXDXDXDXDXDXDXDXD yolo ash hsadhshs
     }    
 }
