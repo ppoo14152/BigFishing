@@ -21,8 +21,9 @@ public class Barco extends ScrollActor
         movm = true;
         direccion = true;
         grados = 0;
-        barco = new GreenfootImage("barcos/barco.png");
-        barco.scale(barco.getWidth()-120, barco.getHeight()-120);
+        barco = new GreenfootImage("barcos/barquitoMinimalista.png");
+        barco.scale(100,200);
+        //barco.scale(barco.getWidth()-120, barco.getHeight()-120);
         this.setImage(barco);
         tiempo = new SimpleTimer();
         tiempo.mark();

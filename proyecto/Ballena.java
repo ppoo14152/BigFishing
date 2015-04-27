@@ -21,7 +21,7 @@ public class Ballena extends Pez
     }
     public void act() 
     {
-      
+     move(1); 
     }
     
 }

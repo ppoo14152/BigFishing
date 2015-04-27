@@ -24,22 +24,25 @@ public class Insecto extends ScrollActor
         if (Greenfoot.isKeyDown("down") && p<148) {
             // move the camera backwards:
             
-            if(this.getGlobalY() == 900)
+            if(this.getGlobalY() > 900)
             {   
                 p++;
                 getWorld().cambiaFondo(p);
             }
-            else
+            //else
+                //if(p==147)
+                //System.out.println("Aqui");
+                //System.out.println(this.getGlobalY());
                 getWorld().moveCamera(-MOVE_AMOUNT);
         }
         if (Greenfoot.isKeyDown("up")) {
             // move the camera forwards:
-            if(this.getGlobalY() == 900 && p != 0)
+            if(this.getGlobalY() > 900 && p != 0)
             {
                  p--;
                 getWorld().cambiaFondo(p);
             }
-            else
+            //else
                 getWorld().moveCamera(MOVE_AMOUNT);
         }
         if (Greenfoot.isKeyDown("left")&&(getX()>0)) {
