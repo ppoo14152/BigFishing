@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Apr 24 11:26:53 CDT 2015
+#Sun Apr 26 19:05:56 CDT 2015
 target10.editor.width=672
 target2.width=80
 target8.name=Nube
@@ -71,7 +71,7 @@ target9.typeParameters=
 dependency7.type=UsesDependency
 target1.naviview.expanded=true
 target10.editor.height=709
-version=2.6.0
+version=2.7.1
 target5.editor.width=900
 dependency6.to=Ola
 target2.showInterface=false
