@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Ola extends ScrollActor
 {
-    private GreenfootImage background1, background2;
+    private GreenfootImage background1;
     private int velocidad;
     
     /**
@@ -17,8 +17,8 @@ public class Ola extends ScrollActor
      */
     public Ola(String img, int v){
         velocidad = v;
-        background2 = new GreenfootImage(img);
         background1 = new GreenfootImage(img);
+        background1.setTransparency(255);
         this.setImage(background1);
    
     }

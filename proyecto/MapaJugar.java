@@ -1,11 +1,11 @@
 import greenfoot.*;
 
-public class DemoWorld extends ScrollWorld
+public class MapaJugar extends ScrollWorld
 {
     /**
      * Constructor de la clase DemoWorld.
      */
-    public DemoWorld()
+    public MapaJugar()
     {
         super(800, 600, 1, 800, 1200);
         //addObject(new Cielo(0, 255, 255));

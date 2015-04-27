@@ -10,30 +10,40 @@ public class Barco extends ScrollActor
 {
     private GreenfootImage barco;
     private int grados;
-    private boolean direccion;
+    private boolean direccion,movm;
+    private SimpleTimer tiempo;
     /**
      * Act - do whatever the Barco wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Barco() 
     {
+        movm = true;
         direccion = true;
         grados = 0;
         barco = new GreenfootImage("barcos/barco.png");
         barco.scale(barco.getWidth()-120, barco.getHeight()-120);
         this.setImage(barco);
+        tiempo = new SimpleTimer();
+        tiempo.mark();
+        this.setLocation(-120, 395);
     }
     
     public void act(){
        
-        modificaGrados();
-        modificaDireccion();
+        if(movm){
+            this.move(1);
+        }
+        if (tiempo.millisElapsed() > 30){
+            modificaGrados();
+            modificaDireccion();
+            tiempo.mark();
+        }
         movientoBarco(); 
         
     }
     
     private void movientoBarco(){
-        
         this.setRotation(grados);
     }
     private void modificaDireccion(){
