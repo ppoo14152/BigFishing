@@ -21,7 +21,7 @@ public class Insecto extends ScrollActor
     {
         getWorld().setCameraDirection(270);
   
-        if (Greenfoot.isKeyDown("down")) {
+        if (Greenfoot.isKeyDown("down") && p<148) {
             // move the camera backwards:
             
             if(this.getGlobalY() == 900)

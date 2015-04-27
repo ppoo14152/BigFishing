@@ -38,12 +38,13 @@ public abstract class ScrollWorld extends World
     private final ArrayList<ScrollActor> objects;
     private final ArrayList<ScrollActor> camFollowers;
     private final int fullWidth, fullHeight;
-    
+
     private int camX, camY, camDir;
-    
+
     private final GreenfootImage bigBackground, back, agua;
     private int scrollPosX, scrollPosY;
-    
+    private int r, g, b;
+
     /**
      * Create a new ScrollWorld.
      * @param width The width of the scroll world in cells.
@@ -67,60 +68,64 @@ public abstract class ScrollWorld extends World
         this.fullHeight = fullHeight;
         if (fullWidth <= 0)
             throw new IllegalArgumentException("The width of the big space ("+fullWidth
-            +") can't be smaller then the width of the world ("+width+")");
+                +") can't be smaller then the width of the world ("+width+")");
         if (fullHeight <= 0)
             throw new IllegalArgumentException("The height of the big space ("+fullHeight
-            +") can't be smaller then the height of the world ("+height+")");
-        
+                +") can't be smaller then the height of the world ("+height+")");
+
         objects = new ArrayList<ScrollActor>();
         camFollowers = new ArrayList<ScrollActor>();
-        
+
         camX = getWidth() /2;
         camY = getHeight() /2;
         camDir = 0;
-        
+
         scrollPosX = 0;
         scrollPosY = 0;
-        
-        
+
         agua = new GreenfootImage(800,600);
-        this.cambiaColorAgua(1);
-        agua.fillRect(0,0,800,600);
-        agua.setTransparency(255);
-        
+        //this.cambiaColorAgua(1);
+        //agua.fillRect(0,0,800,600);
+        //agua.setTransparency(255);
+
         bigBackground = new GreenfootImage(width+width, height+height);
-        
-        setNewBackground(back);
+
+        //setNewBackground(agua);
     }
-    
+
     public void cambiaColorAgua(int tipo)
     {
         if(tipo == 1)
-            agua.setColor(new Color(0,148,255));
+        {
+            r = 0;
+            g = 148;
+            b = 255;
+            agua.setColor(new Color(r,g,b));
+        }
         else
-            agua.setColor(new Color(0,82,85));
+        {
+            r = 50;
+            g = 155;
+            b = 151;
+            //agua.setColor(new Color(0,82,85));
+            agua.setColor(new Color(r,g,b));
+        }
+        agua.fillRect(0,0,800,600);
+        agua.setTransparency(255);
+        setNewBackground(agua);
     }
-    
+
     public void cambiaFondo(int profundidad)
     {
-            //Borrar
-            //agua.setColor(new Color(0,148,255));
-            //agua.setTransparency(255);
-            //agua.fillRect(0,0,800,600);
-            if(profundidad == 0)
-                setNewBackground(new GreenfootImage("Oceano.png"));
-            else
-            {
-                agua.setColor(new Color(0,148-profundidad,255));
-                agua.fillRect(0,0,800,600);
-                setNewBackground(agua);
-            }
+        agua.setColor(new Color(r,g-profundidad,b));
+        agua.fillRect(0,0,800,600);
+        setNewBackground(agua);
+
     }
-    
-    
+
     
     /** EXTRA METHODS: */
-    
+
     /**
      * Sets the background of the world. This will also initialize
      * everything to make the background scroll, something the
@@ -131,24 +136,24 @@ public abstract class ScrollWorld extends World
         bigBackground.clear();
         /**Opcional*/
         if (background.getWidth() == bigBackground.getWidth() &&
-            background.getHeight() == bigBackground.getHeight()) {
+        background.getHeight() == bigBackground.getHeight()) {
             bigBackground.drawImage(background, 0,0);
             back.clear();
             back.drawImage(bigBackground, scrollPosX,scrollPosY);
             return;
         }
-        
+
         bigBackground.drawImage(background, 0,0);
         bigBackground.drawImage(background, background.getWidth(),0);
         bigBackground.drawImage(background, 0,background.getHeight());
         bigBackground.drawImage(background, background.getWidth(),background.getHeight());
-        
+
         back.clear();
         back.drawImage(bigBackground, scrollPosX,scrollPosY);
     }
-    
+
     /** ADDING + REMOVING OBJECTS: */
-    
+
     /**
      * Adds an object which will follow the camera.
      * The location is seen from the camera, not from the
@@ -167,7 +172,7 @@ public abstract class ScrollWorld extends World
         camFollowers.add(cameraFollower);
         cameraFollower.setIsCameraFollower(true);
     }
-    
+
     /**
      * Adds an object to the the world. If the given object
      * is a ScrollActor or a subclass of it, the x and y
@@ -198,7 +203,7 @@ public abstract class ScrollWorld extends World
         } else
             super.addObject(object,x,y);
     }
-    
+
     /**
      * Removes an object from the world.
      * @param object The object that will be removed
@@ -215,9 +220,9 @@ public abstract class ScrollWorld extends World
             a.setIsCameraFollower(false);
         }
     }
-    
+
     /** RETURN VALUES: */
-    
+
     /**
      * Returns the camera's x coördinate in big space.
      * @see #getCameraY
@@ -226,7 +231,7 @@ public abstract class ScrollWorld extends World
     {
         return camX;
     }
-    
+
     /**
      * Returns the camera's y coördinate in big space.
      * @see #getCameraX
@@ -235,7 +240,7 @@ public abstract class ScrollWorld extends World
     {
         return camY;
     }
-    
+
     /**
      * Returns the width of the big space.
      * @see #getFullHeight
@@ -244,7 +249,7 @@ public abstract class ScrollWorld extends World
     {
         return fullWidth;
     }
-    
+
     /**
      * Returns the height of the big space.
      * @see #getFullWidth
@@ -253,9 +258,9 @@ public abstract class ScrollWorld extends World
     {
         return fullHeight;
     }
-    
+
     /** CAMERA MOVEMENT + ROTATION: */
-    
+
     /**
      * Moves the camera to a particular location.
      * Note that this is a location in the big space.
@@ -284,7 +289,7 @@ public abstract class ScrollWorld extends World
         moveBackgroundRight(dx *cellSize);
         moveBackgroundUp(dy *cellSize);
     }
-    
+
     /**
      * Sets the direction the camera is facing.
      * It doesn't change anything you see, but it makes
@@ -309,7 +314,7 @@ public abstract class ScrollWorld extends World
         if (camDir == degrees) return;
         camDir = degrees;
     }
-    
+
     /**
      * Turns the camera.
      * It doesn't change anything you see, but it makes
@@ -324,7 +329,7 @@ public abstract class ScrollWorld extends World
     {
         setCameraDirection(camDir +amount);
     }
-    
+
     /**
      * Moves the camera forward to the direction
      * it's facing (to go backwards, enter a negative number).
@@ -339,9 +344,9 @@ public abstract class ScrollWorld extends World
         double dy = Math.sin(radians) *amount;
         setCameraLocation((int)(camX +dx +0.5), (int)(camY +dy +0.5));
     }
-    
+
     /** MOVING BACKGROUND: */
-    
+
     /**
      * All the honor for this goes to Busch2207 from
      * greenfoot.org
@@ -358,10 +363,10 @@ public abstract class ScrollWorld extends World
         }
         if(scrollPosY!=600)
             scrollPosY %= height;
-            
+
         getBackground().drawImage(bigBackground, scrollPosX -getWidth(),scrollPosY -height);
     }
-    
+
     /**
      * All the honor for this goes to Busch2207 from
      * greenfoot.org
