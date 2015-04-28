@@ -44,8 +44,8 @@ public class MainMenu extends ScrollWorld
         addObject(new BarcoG(),900, 350);
         addObject(new Ola("Olas/ola2p.png", 2), 0, 440);
         addObject(new Barco(), 0,395);
-        addObject(ballenaA, 0, 400);
-        addObject(ballenaB, 0, 400);
+        addObject(ballenaA, 0, 390);
+        addObject(ballenaB, 0, 390);
         addObject(new Ola("Olas/ola1h.png", 3), 0, 450);
         tiempo = new SimpleTimer();
         
