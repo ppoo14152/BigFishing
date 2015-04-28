@@ -18,11 +18,9 @@ public class Rio extends ScrollWorld
         super(800, 600, 1, 800, 2000);
         addObject(new Ballena(),0,1000);
         addObject(new Ballena(),0,1600);
-        //addObject(new Ballena(),0,1800);
-        //addObject(new Ballena(),0,1900);
         addObject(new Cielo(0, 255, 255), 400, 200);
-        addObject(new Ola("OlaRioA.png", 2), 0, 460);
-        addObject(new Ola("OlaRio.png", 1), 0, 490);
+        addObject(new Ola("Olas/olaRioA.png", 2), 0, 370);
+        addObject(new Ola("Olas/olaRioF.png", 1), 0, 400);
         addObject(new FondoMarino(),400,1900);
         addObject(new Ballena(),0,1000);
         addObject(new Ballena(),0,1600);
