@@ -21,7 +21,7 @@ public class Ballena extends Pez
         this.setImage(img);
     }
     public void act(){
-        //move(1); 
+        move(2); 
     }
     
 }
