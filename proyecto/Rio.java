@@ -23,6 +23,7 @@ public class Rio extends ScrollWorld
         addObject(new Cielo(0, 255, 255), 400, 200);
         addObject(new Ola("OlaRioA.png", 2), 0, 460);
         addObject(new Ola("OlaRio.png", 1), 0, 490);
+        addObject(new FondoMarino(),400,1900);
         cambiaColorAgua(0);
         addCameraFollower(new Insecto(), 0, 0);
     }
