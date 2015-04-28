@@ -27,13 +27,26 @@ public class MainMenu extends ScrollWorld
         fondo.setColor(new Color(33,161,254));
         fondo.fill();
         this.setBackground(fondo);
+        addObject(new Nube("nubes/nube1dia.png",1),0, 35);
+        addObject(new Nube("nubes/nube1dia.png",2),0, 100);
         addObject(new Ola("Olas/ola4p.png", 1), 0, 430);
+        addObject(new BarcoG(),900, 350);
         addObject(new Ola("Olas/ola2p.png", 2), 0, 440);
         addObject(new Barco(), 0,395);
         addObject(new Ola("Olas/ola1h.png", 3), 0, 450);
         addObject(jugar, 300   ,300);
         addObject(cred, 300, 370);
         
+    }
+    
+    public void act(){
+        if(jugar.getTouch()){
+        }
+        if(cred.getTouch()){
+            this.removeObject(cred);
+            this.removeObject(jugar);
+            
+        }
     }
         
 }

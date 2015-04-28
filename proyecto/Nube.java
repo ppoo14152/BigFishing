@@ -9,19 +9,22 @@ import greenfoot.*;
 public class Nube extends ScrollActor
 {
     private GreenfootImage img;
-    
+    private int vel;
     /**
      * Act - do whatever the Nube wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Nube(String n){
+    public Nube(String n, int v){
+        vel = v;
         img =new GreenfootImage(n);
         this.setImage(n);
     }
     
     public void act() 
     {
-        move(-1);
-        // Add your action code here.
+        move(vel);
+        if(this.getGlobalX()>1200){
+            this.setGlobalLocation(-250, Greenfoot.getRandomNumber(200));
+        }
     }    
 }

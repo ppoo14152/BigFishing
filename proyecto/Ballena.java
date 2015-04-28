@@ -17,11 +17,11 @@ public class Ballena extends Pez
     public Ballena(){
         animacion = false;
         img = new GreenfootImage("BallenaMinimalistap.png");
+        img.scale(img.getWidth()+100, img.getHeight()+100);
         this.setImage(img);
     }
-    public void act() 
-    {
-     move(1); 
+    public void act(){
+        //move(1); 
     }
     
 }
