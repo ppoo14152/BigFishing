@@ -30,6 +30,11 @@ public class Boton extends Actor
         return touch;
     }
     
+    public void  setTouch(){
+        touch = false;
+        
+    }
+    
     public void act() 
     {
         cambiaBoton();

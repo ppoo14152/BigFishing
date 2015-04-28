@@ -11,6 +11,7 @@ public class ImagenC extends ScrollActor
     private GreenfootImage img;
     private boolean init, mov;
     private int gX;
+    private int aux, auy;
     /**
      * Act - do whatever the ImagenC wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,15 +26,25 @@ public class ImagenC extends ScrollActor
     public void act() 
     {
         if(init){
-            this.setGlobalLocation(this.getGlobalX()-gX,this.getY());
+            aux = getX();
+            auy = getY();
+            this.setGlobalLocation(aux-gX,auy);
             init = false;
         }
-        if(mov)
-        this.setGlobalLocation(this.getGlobalX()+1, this.getY());
+        if(mov){
+            this.setGlobalLocation(this.getGlobalX()+2, this.getY());
+        }
+        if(this.getGlobalX()>1250){
+            mov = false;
+            this.setGlobalLocation(0-gX,this.getY());
+        }
     }
     
     public void setActivaMov(){
         mov = true;
     }
     
+    public boolean getReinicio(){
+        return mov;
+    }
 }

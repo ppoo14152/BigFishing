@@ -9,12 +9,14 @@ import java.awt.Color;
  */
 public class MainMenu extends ScrollWorld
 {
+    private GreenfootSound mfondo;
     private GreenfootImage fondo;
     private Boton jugar;
     private Boton cred;
     private ImagenC ballenaA;
     private ImagenC ballenaB;
     private SimpleTimer tiempo;
+    private boolean botones, existen;
 
 
     /**
@@ -24,6 +26,10 @@ public class MainMenu extends ScrollWorld
     public MainMenu()
     {
         super(800, 600, 1, 800, 1200);
+        mfondo = new GreenfootSound("gf.mp3");
+        mfondo.setVolume(mfondo.getVolume()-50);
+        botones = true;
+        existen = false;
         ballenaA = new ImagenC("creditos/b1.png",250);
         ballenaB = new ImagenC("creditos/b2.png",750);
         jugar = new Boton("botones/JugarB.png","botones/JugarA.png");
@@ -41,23 +47,45 @@ public class MainMenu extends ScrollWorld
         addObject(ballenaA, 0, 400);
         addObject(ballenaB, 0, 400);
         addObject(new Ola("Olas/ola1h.png", 3), 0, 450);
-        addObject(jugar, 300   ,300);
-        addObject(cred, 300, 370);
         tiempo = new SimpleTimer();
         
         
     }
     
     public void act(){
+        if(!mfondo.isPlaying()){
+            mfondo.play();
+        }
+        
         if(jugar.getTouch()){
         }
+        
         if(cred.getTouch()){
-            tiempo.mark();
-            this.removeObject(cred);
-            this.removeObject(jugar);
+            botones = false;
             ballenaA.setActivaMov();
             ballenaB.setActivaMov();
+            cred.setTouch();
+            tiempo.mark();
         }
+        if(tiempo.millisElapsed()>17500){
+            botones = true;
+        }
+        muestraBotones();   
     }
+    
+    public void muestraBotones(){
+        if(botones){
+            if(!existen){
+                this.addObject(jugar, 300, 300);
+                this.addObject(cred, 300, 370);
+                existen = true;
+            }
+        }else{
+                this.removeObject(cred);
+                this.removeObject(jugar);
+                existen = false;
+        }
+    }    
+       
+ }
         
-}
