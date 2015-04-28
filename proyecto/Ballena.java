@@ -15,13 +15,14 @@ public class Ballena extends Pez
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Ballena(){
+        super(1, 9, 8, 3);
         animacion = false;
         img = new GreenfootImage("BallenaMinimalistap.png");
         img.scale(img.getWidth()+100, img.getHeight()+100);
         this.setImage(img);
     }
     public void act(){
-        move(2); 
+        move(-2); 
     }
     
 }

@@ -24,7 +24,7 @@ public class Nube extends ScrollActor
     {
         move(vel);
         if(this.getGlobalX()>1200){
-            this.setGlobalLocation(-250, Greenfoot.getRandomNumber(200));
+            this.setGlobalLocation(-250, 50+Greenfoot.getRandomNumber(200));
         }
     }    
 }

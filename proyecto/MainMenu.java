@@ -58,6 +58,12 @@ public class MainMenu extends ScrollWorld
         }
         
         if(jugar.getTouch()){
+            if(Greenfoot.getRandomNumber(2) == 0){
+                Greenfoot.setWorld(new Mar());
+            }
+            else{
+                Greenfoot.setWorld(new Rio());
+            }
         }
         
         if(cred.getTouch()){
