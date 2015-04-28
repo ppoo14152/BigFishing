@@ -1,7 +1,9 @@
 #BlueJ class context
-comment0.params=imga
-comment0.target=ImagenC(java.lang.String)
+comment0.params=imga\ x
+comment0.target=ImagenC(java.lang.String,\ int)
 comment0.text=\n\ Act\ -\ do\ whatever\ the\ ImagenC\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment2.params=
+comment2.target=void\ setActivaMov()
+numComments=3

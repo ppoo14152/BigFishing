@@ -12,6 +12,9 @@ public class MainMenu extends ScrollWorld
     private GreenfootImage fondo;
     private Boton jugar;
     private Boton cred;
+    private ImagenC ballenaA;
+    private ImagenC ballenaB;
+    private SimpleTimer tiempo;
 
 
     /**
@@ -21,6 +24,8 @@ public class MainMenu extends ScrollWorld
     public MainMenu()
     {
         super(800, 600, 1, 800, 1200);
+        ballenaA = new ImagenC("creditos/b1.png",250);
+        ballenaB = new ImagenC("creditos/b2.png",750);
         jugar = new Boton("botones/JugarB.png","botones/JugarA.png");
         cred = new Boton("botones/CreditosB.png","botones/CreditosA.png");
         fondo = new GreenfootImage(800,600);
@@ -33,9 +38,13 @@ public class MainMenu extends ScrollWorld
         addObject(new BarcoG(),900, 350);
         addObject(new Ola("Olas/ola2p.png", 2), 0, 440);
         addObject(new Barco(), 0,395);
+        addObject(ballenaA, 0, 400);
+        addObject(ballenaB, 0, 400);
         addObject(new Ola("Olas/ola1h.png", 3), 0, 450);
         addObject(jugar, 300   ,300);
         addObject(cred, 300, 370);
+        tiempo = new SimpleTimer();
+        
         
     }
     
@@ -43,9 +52,11 @@ public class MainMenu extends ScrollWorld
         if(jugar.getTouch()){
         }
         if(cred.getTouch()){
+            tiempo.mark();
             this.removeObject(cred);
             this.removeObject(jugar);
-            
+            ballenaA.setActivaMov();
+            ballenaB.setActivaMov();
         }
     }
         
