@@ -57,6 +57,9 @@ public class Anzuelo extends ScrollActor
         }
         
         if (Greenfoot.isKeyDown("a") && (getX()>0)) {
+<<<<<<< HEAD
+            setLocation((getX() - 3), getY());
+=======
             if(baja == false)
             {
                 setLocation(getX() - 3, getY());
@@ -66,6 +69,7 @@ public class Anzuelo extends ScrollActor
             {
                 setLocation(getX() - 3, getY());
             }
+>>>>>>> 9eb16a36eaea64270364e85633b32097fcd75d71
         }
         
         if (Greenfoot.isKeyDown("d") && (getX()<800)) 
