@@ -28,10 +28,10 @@ public class Jugador extends ScrollActor
         {
             aux = false;
         }
-        if (Greenfoot.isKeyDown("a")&&(getX()>0) && aux == false) {
+        if (Greenfoot.isKeyDown("a")&& getX()>98 && aux == false) {
             setLocation(getX() - 3, getY());
         }
-        if (Greenfoot.isKeyDown("d")&&(getX()<800) && aux == false) {
+        if (Greenfoot.isKeyDown("d")&& getX()<800 && aux == false) {
             setLocation(getX() + 3, getY());
         }
         

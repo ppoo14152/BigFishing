@@ -47,45 +47,29 @@ public class Anzuelo extends ScrollActor
     
         if(Greenfoot.isKeyDown("w") && baja == true)
         {
-            //timer.mark();
-            //if(timer.millisElapsed() > 100)
-            //{
                 while(this.getGlobalY() != posOriginalY)
                 {
-                    //System.out.println("Aqui");
-                    //if((timer.millisElapsed() > 50))
-                    //{
                         if(this.getGlobalY() > 900 && p != 0)
                         {
                             p--;
                             getWorld().cambiaFondo(p);
                         }
                         getWorld().moveCamera(MOVE_AMOUNT);
-                        //baja = false;
-                      //  timer.mark();
-                    //}
                 }
                 baja = false;
-              //  timer.mark();
-            //}
         }
         
         if(Greenfoot.isKeyDown("s") && baja == false)
         {
-            //timer.mark();
-            //if(timer.millisElapsed() > 100)
-            //{
                 baja = true;
                 posOriginalX =this.getGlobalX();
                 posOriginalY =this.getGlobalY();
                 getWorld().moveCamera(-100);
                 limit = this.getX()-30;
                 timer.mark();
-            //}
         }
         
-        if (Greenfoot.isKeyDown("a") && (getX()>0)) {
-            
+        if (Greenfoot.isKeyDown("a") && (isAtEdge() == false)) {
             if(baja == false)
             {
                 setLocation(getX() - 3, getY());
@@ -97,7 +81,7 @@ public class Anzuelo extends ScrollActor
             }
         }
         
-        if (Greenfoot.isKeyDown("d") && (getX()<800)) 
+        if (Greenfoot.isKeyDown("d") && (getX()<696)) 
         {
             if(baja == false)
             {
@@ -119,27 +103,5 @@ public class Anzuelo extends ScrollActor
             }
             getWorld().moveCamera(-MOVE_AMOUNT);
         }
-        
-        /*if (Greenfoot.isKeyDown("w")) 
-        {    
-            while(this.getGlobalY() != posOriginal)
-            {
-                if(this.getGlobalY() > 900 && p != 0)
-                {
-                    p--;
-                    getWorld().cambiaFondo(p);
-                }
-                getWorld().moveCamera(MOVE_AMOUNT);
-            }
-        }*/
-        
-        /*if (Greenfoot.isKeyDown("left")&&(getX()>0)) {
-            setLocation(getX() - 3, getY());
-        }
-        
-        if (Greenfoot.isKeyDown("right")&&(getX()<800)) {
-            setLocation(getX() + 3, getY());
-        }*/
-        
      }
 }
