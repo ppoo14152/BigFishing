@@ -13,6 +13,8 @@ public class Anzuelo extends ScrollActor
     private GreenfootImage an;
     private boolean baja;
     private int limit;
+    private int move;
+    private int posOriginal;
     /**
      * Move to face the mouse,
      * and listen to the up and down keys.
@@ -21,8 +23,10 @@ public class Anzuelo extends ScrollActor
     {
         baja = false;
         limit =0;
+        
         an = new GreenfootImage(name);
         this.setImage(an);
+        move = 3;
     }
     
     public void act()
@@ -31,20 +35,53 @@ public class Anzuelo extends ScrollActor
         
         if(Greenfoot.isKeyDown("space"))
         {
-            baja = true;
-            getWorld().moveCamera(-30);
-            limit = this.getX()+30;
+            if(baja == false)
+            {
+                baja = true;
+                posOriginal =this.getGlobalY();
+                getWorld().moveCamera(-30);
+                limit = this.getX()-30;
+                posOriginal =this.getGlobalY();
+           }
+            if(this.getGlobalY() != posOriginal)
+            while(this.getGlobalY() != posOriginal)
+            {
+                if(this.getGlobalY() > 900 && p != 0)
+                {
+                    p--;
+                    getWorld().cambiaFondo(p);
+                }
+                getWorld().moveCamera(MOVE_AMOUNT);
+            }
+            
         }
         
         if (Greenfoot.isKeyDown("a") && (getX()>0)) {
-            setLocation(getX() - 3, getY());
+            if(baja == false)
+            {
+                setLocation(getX() - 3, getY());
+            }
+            
+            if (baja && this.getX() > limit)
+            {
+                setLocation(getX() - 3, getY());
+            }
         }
         
-        if (Greenfoot.isKeyDown("d") && (getX()<800)) {
-            setLocation(getX() + 3, getY());
+        if (Greenfoot.isKeyDown("d") && (getX()<800)) 
+        {
+            if(baja == false)
+            {
+                setLocation(getX() + 3, getY());
+            }
+            
+            if (baja && this.getX() < (limit+60))
+            {
+                setLocation(getX() + 3, getY());
+            }
         }
         
-        if (Greenfoot.isKeyDown("down") && p<148 && baja == true) {
+        if (Greenfoot.isKeyDown("s") && p<148 && baja == true) {
             
             if(this.getGlobalY() > 900)
             {   
@@ -54,15 +91,18 @@ public class Anzuelo extends ScrollActor
             getWorld().moveCamera(-MOVE_AMOUNT);
         }
         
-        if (Greenfoot.isKeyDown("up")) 
+        /*if (Greenfoot.isKeyDown("w")) 
         {    
-            if(this.getGlobalY() > 900 && p != 0)
+            while(this.getGlobalY() != posOriginal)
             {
-                 p--;
-                getWorld().cambiaFondo(p);
-            }
+                if(this.getGlobalY() > 900 && p != 0)
+                {
+                    p--;
+                    getWorld().cambiaFondo(p);
+                }
                 getWorld().moveCamera(MOVE_AMOUNT);
-        }
+            }
+        }*/
         
         /*if (Greenfoot.isKeyDown("left")&&(getX()>0)) {
             setLocation(getX() - 3, getY());
