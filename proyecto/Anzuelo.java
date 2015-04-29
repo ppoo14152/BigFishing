@@ -14,7 +14,7 @@ public class Anzuelo extends ScrollActor
     private boolean baja;
     private int limit;
     private int move;
-    private int posOriginal;
+    private int posOriginalX, posOriginalY;
     private boolean exitePez;
     /**
      * Move to face the mouse,
@@ -42,18 +42,20 @@ public class Anzuelo extends ScrollActor
     {
         getWorld().setCameraDirection(270);
         
-        if(Greenfoot.isKeyDown("space"))
+        /*if(Greenfoot.isKeyDown("space"))
         {
             if(baja == false)
             {
+                System.out.println("Aqui");
                 baja = true;
-                posOriginal =this.getGlobalY();
-                getWorld().moveCamera(-30);
+                posOriginalX =this.getGlobalX();
+                posOriginalY =this.getGlobalY();
+                getWorld().moveCamera(-100);
                 limit = this.getX()-30;
-                posOriginal =this.getGlobalY();
            }
-            if(this.getGlobalY() != posOriginal)
-            while(this.getGlobalY() != posOriginal)
+            if(this.getGlobalY() != posOriginalY)
+            {
+            while(this.getGlobalY() != posOriginalY)
             {
                 if(this.getGlobalY() > 900 && p != 0)
                 {
@@ -61,8 +63,36 @@ public class Anzuelo extends ScrollActor
                     getWorld().cambiaFondo(p);
                 }
                 getWorld().moveCamera(MOVE_AMOUNT);
+                baja = false;
             }
-            
+            }
+        }*/
+        
+        if(Greenfoot.isKeyDown("space") && baja == true)
+        {
+            if(this.getGlobalY() != posOriginalY)
+            {
+                while(this.getGlobalY() != posOriginalY)
+                {
+                    if(this.getGlobalY() > 900 && p != 0)
+                    {
+                        p--;
+                        getWorld().cambiaFondo(p);
+                    }
+                getWorld().moveCamera(MOVE_AMOUNT);
+                baja = false;
+            }
+            }
+        }
+        
+        if(Greenfoot.isKeyDown("space") && baja == false)
+        {
+            baja = true;
+            posOriginalX =this.getGlobalX();
+            posOriginalY =this.getGlobalY();
+                getWorld().moveCamera(-100);
+                limit = this.getX()-30;
+ 
         }
         
         if (Greenfoot.isKeyDown("a") && (getX()>0)) {
