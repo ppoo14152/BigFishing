@@ -15,6 +15,7 @@ public class Anzuelo extends ScrollActor
     private int limit;
     private int move;
     private int posOriginal;
+    private boolean exitePez;
     /**
      * Move to face the mouse,
      * and listen to the up and down keys.
@@ -23,10 +24,18 @@ public class Anzuelo extends ScrollActor
     {
         baja = false;
         limit =0;
-        
+        //existePez = false;
         an = new GreenfootImage(name);
         this.setImage(an);
         move = 3;
+    }
+    
+    public int globalX(){
+        return this.getGlobalX();
+    }
+    
+    public int globalY(){
+        return this.getGlobalY();
     }
     
     public void act()
