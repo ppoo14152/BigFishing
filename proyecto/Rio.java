@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Rio extends ScrollWorld
 {
-
+    Jugador p1 = new Jugador("barcos/barcoMinimalistag.png");
+    Anzuelo anz = new Anzuelo("anzuelo1.png");
     /**
      * Constructor for objects of class Rio.
      * 
@@ -23,6 +24,8 @@ public class Rio extends ScrollWorld
         addObject(new Nube("nubes/nube1dia.png",2),25, 50);
         addObject(new Nube("nubes/nube1dia.png",2),78, 100);
         addObject(new Ola("Olas/olaRioA.png", 2), 0, 370);
+        addObject(p1,300 ,300);
+        addCameraFollower(anz, 300, 200);
         addObject(new Ola("Olas/olaRioF.png", 1), 0, 400);
         addObject(new FondoMarino(),400,1900);
         addObject(new Ballena(),0,1000);
@@ -30,7 +33,7 @@ public class Rio extends ScrollWorld
         addObject(new Ballena(),0,1800);
         addObject(new Ballena(),0,1900);
         cambiaColorAgua(0);
-        addCameraFollower(new Insecto(), 0, 0);
+        addCameraFollower(anz, 0, 0);
         iniciaPecesAmarillos();
         iniciaPecesAzules();
     }
