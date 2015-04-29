@@ -37,7 +37,7 @@ public class Anzuelo extends ScrollActor
         }
         
         if (Greenfoot.isKeyDown("a") && (getX()>0)) {
-            setLocation(getX() - 3, getY());
+            setLocation((getX() - 3), getY());
         }
         
         if (Greenfoot.isKeyDown("d") && (getX()<800)) {
