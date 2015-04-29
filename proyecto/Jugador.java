@@ -9,18 +9,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jugador extends ScrollActor
 {
     private GreenfootImage ju;
+    private boolean aux;
     public Jugador(String n)
     {
         ju = new GreenfootImage(n);
         this.setImage(ju);
+        aux = false;
     }
+    
     
     public void act() 
     {
-        if (Greenfoot.isKeyDown("a")&&(getX()>0)) {
+        if(Greenfoot.isKeyDown("space")&&(getX()>0))
+        {
+            aux = true;
+        }
+        if (Greenfoot.isKeyDown("a")&&(getX()>0) && aux == false) {
             setLocation(getX() - 3, getY());
         }
-        if (Greenfoot.isKeyDown("d")&&(getX()<800)) {
+        if (Greenfoot.isKeyDown("d")&&(getX()<800) && aux == false) {
             setLocation(getX() + 3, getY());
         }
         

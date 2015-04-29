@@ -24,6 +24,6 @@ public class Mar extends ScrollWorld
         addObject(new Ola("Olas/olaMar.png", 1), 0, 400);
         addObject(new FondoMarino(),400,1900);
         cambiaColorAgua(1);
-        addCameraFollower(new Insecto(), 0, 0);
+        //addCameraFollower(new Insecto(), 0, 0);
     }
 }

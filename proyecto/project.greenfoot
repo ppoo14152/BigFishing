@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Apr 28 17:46:02 CDT 2015
+#Tue Apr 28 18:14:43 CDT 2015
 target16.name=BarcoG
 target2.name=SimpleTimer
 class.ScrollWorld.superclass=greenfoot.World
@@ -141,6 +141,7 @@ dependency21.to=ImagenC
 target7.naviview.expanded=true
 target6.name=FondoMarino
 target16.showInterface=false
+class.anzuelo.superclass=ScrollActor
 class.Fondo.superclass=ScrollWorld
 dependency15.type=UsesDependency
 dependency12.from=Rio
@@ -319,7 +320,7 @@ target8.editor.y=69
 target8.editor.x=292
 target14.editor.height=700
 target11.editor.width=900
-world.lastInstantiated=MainMenu
+world.lastInstantiated=Rio
 dependency14.to=Insecto
 target1.height=50
 target4.typeParameters=
