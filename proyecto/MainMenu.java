@@ -54,7 +54,7 @@ public class MainMenu extends ScrollWorld
     
     public void act(){
         if(!mfondo.isPlaying()){
-            //mfondo.play();
+            mfondo.play();
         }
         
         if(jugar.getTouch()){
