@@ -20,9 +20,13 @@ public class Jugador extends ScrollActor
     
     public void act() 
     {
-        if(Greenfoot.isKeyDown("space")&&(getX()>0))
+        if(Greenfoot.isKeyDown("s")&&(getX()>0))
         {
             aux = true;
+        }
+        if(Greenfoot.isKeyDown("w")&&(getX()>0))
+        {
+            aux = false;
         }
         if (Greenfoot.isKeyDown("a")&&(getX()>0) && aux == false) {
             setLocation(getX() - 3, getY());
