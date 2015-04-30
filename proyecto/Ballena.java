@@ -8,15 +8,15 @@ import greenfoot.*;
  */
 public class Ballena extends Pez
 {
-    private boolean animacion; 
-    private GreenfootImage img;
     /**
      * Act - do whatever the Ballena wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private GreenfootImage img;
+    private boolean direccion, anclado;
+    private Actor anzuelo;
     public Ballena(){
-        super(1, 9, 8, 3);
-        animacion = false;
+        super(1, 9, 8, 3,10+Greenfoot.getRandomNumber(10));
         img = new GreenfootImage("BallenaMinimalistap.png");
         img.scale(img.getWidth()+100, img.getHeight()+100);
         this.setImage(img);

@@ -16,6 +16,8 @@ public class Rio extends ScrollWorld
     private List<Pez> peces = new ArrayList<Pez>();
     private boolean refres;
     private SimpleTimer tiempo;
+    private TextoP dinero;
+    private TextoP npeces;
 
     /**
      * Constructor for objects of class Rio.
@@ -24,6 +26,8 @@ public class Rio extends ScrollWorld
     public Rio()
     {
         super(800, 600, 1, 800, 2000);
+        dinero = new TextoP("$");
+        npeces = new TextoP("P");
         refres = true;
         mochila = new Boton("mochila.png","mochila.png",false);
         inventario = new Boton("Inventario.png", "Inventario.png", false);
@@ -48,6 +52,8 @@ public class Rio extends ScrollWorld
         iniciaPecesAzules();
         addObject(mochila,750,85);
         addObject(inventario,750, 170);
+        addObject(dinero, 750, 250);
+        addObject(npeces,750, 310);
         tiempo = new SimpleTimer();
         tiempo.mark();
     }
@@ -78,6 +84,8 @@ public class Rio extends ScrollWorld
             iniciaPecesAzules();
             refres = false;
         }
+        dinero.actualiza(p1.getDinero());
+        npeces.actualiza(p1.getNPeces());
     }
         
 }

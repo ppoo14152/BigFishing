@@ -8,6 +8,7 @@ import greenfoot.*;
  */
 public class PezAmarillo extends Pez
 {
+
     private GreenfootImage img;
     private boolean direccion, anclado;
     private Actor anzuelo;
@@ -16,7 +17,7 @@ public class PezAmarillo extends Pez
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public PezAmarillo(){
-        super(1+Greenfoot.getRandomNumber(3),2,2,2);
+        super(1+Greenfoot.getRandomNumber(3),2,2,2,1+Greenfoot.getRandomNumber(3));
         anclado = false;
         direccion = true;
         img = new GreenfootImage("Pez1.png");

@@ -104,6 +104,9 @@ public class Anzuelo extends ScrollActor
         if(regresa){
             if(this.getGlobalY() > 900 && p != 0){
                 p-=3;
+                if(p < 0){
+                    p = 0;
+                }
                 getWorld().cambiaFondo(p);
             }
             getWorld().moveCamera(MOVE_REGRESO); 
