@@ -29,7 +29,7 @@ public class PezMorado extends Pez
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(anzuelo != null){
             if(!((Anzuelo)anzuelo).existePez()||anclado){
-                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+20);
+                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+30);
                 anclado = true;
                 if(this.getRotation() == 0){
                     img = this.getImage();

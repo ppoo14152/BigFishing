@@ -34,7 +34,9 @@ public class Jugador extends ScrollActor
             dinero+=((Pez)pez).valor();
             getWorld().removeObject(pez);
             nPeces++;
-            ((Anzuelo)anzuelo).noHayPez();
+            if(anzuelo != null){
+                ((Anzuelo)anzuelo).noHayPez();
+            }
         }
         if(Greenfoot.isKeyDown("s")&&(getX()>0))
         {
