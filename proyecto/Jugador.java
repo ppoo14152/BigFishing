@@ -10,7 +10,7 @@ public class Jugador extends ScrollActor
 {
     private GreenfootImage ju;
     private boolean aux;
-    private Actor pez;
+    private Actor pez,anzuelo;
     private int nPeces;
     public Jugador(String n)
     {
@@ -24,9 +24,11 @@ public class Jugador extends ScrollActor
     public void act() 
     {
         pez = this.getOneIntersectingObject(Pez.class);
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(pez != null){
             getWorld().removeObject(pez);
             nPeces++;
+            ((Anzuelo)anzuelo).noHayPez();
         }
         if(Greenfoot.isKeyDown("s")&&(getX()>0))
         {
@@ -42,6 +44,6 @@ public class Jugador extends ScrollActor
         if (Greenfoot.isKeyDown("d")&& getX()<800 && aux == false) {
             setLocation(getX() + 3, getY());
         }
-        
+        System.out.println(nPeces);
      }
 }    

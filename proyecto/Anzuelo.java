@@ -16,7 +16,7 @@ public class Anzuelo extends ScrollActor
     private int limit;
     private int move;
     private int posOriginalX, posOriginalY;
-    private boolean exitePez, regresa;
+    private boolean existePez, regresa;
     private SimpleTimer timer = new SimpleTimer();
     /**
      * Move to face the mouse,
@@ -27,7 +27,7 @@ public class Anzuelo extends ScrollActor
         baja = false;
         limit =0;
         regresa = false;
-        //existePez = false;
+        existePez = false;
         an = new GreenfootImage(name);
         this.setImage(an);
         move = 3;
@@ -49,7 +49,7 @@ public class Anzuelo extends ScrollActor
             regresaBarco();
      }
      
-     void movimientoAnzuelo(){
+    private void movimientoAnzuelo(){
          if(Greenfoot.isKeyDown("w") && baja == true){
              regresa = true;
              baja = false;
@@ -100,7 +100,7 @@ public class Anzuelo extends ScrollActor
         }
     }
     
-    void regresaBarco(){
+    private void regresaBarco(){
         if(regresa){
             if(this.getGlobalY() < 900 && p != 0){
                 p--;
@@ -111,7 +111,17 @@ public class Anzuelo extends ScrollActor
                 regresa = false;
             }
         }
-        System.out.println(p);
-        System.out.println(this.getGlobalY());
+    }
+    
+    public boolean existePez(){
+        return existePez;
+    }    
+    
+    public void noHayPez(){
+        existePez = false;
+    }
+    
+    public void hayPez(){
+        existePez = true;
     }
 }

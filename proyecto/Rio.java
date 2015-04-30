@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Write a description of class Rio here.
  * 
@@ -8,10 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Rio extends ScrollWorld
 {
-    Jugador p1 = new Jugador("barcos/barcoMinimalistag.png");
-    Anzuelo anz = new Anzuelo("anzuelo1.png");
-    Boton mochila;
-    Boton inventario;
+    private Jugador p1 = new Jugador("barcos/barcoMinimalistag.png");
+    private Anzuelo anz = new Anzuelo("anzuelo1.png");
+    private Boton mochila;
+    private Boton inventario;
+    private List<Pez> peces = new ArrayList<Pez>();
+    private boolean refres;
+    private SimpleTimer tiempo;
+
     /**
      * Constructor for objects of class Rio.
      * 
@@ -19,6 +24,7 @@ public class Rio extends ScrollWorld
     public Rio()
     {
         super(800, 600, 1, 800, 2000);
+        refres = true;
         mochila = new Boton("mochila.png","mochila.png",false);
         inventario = new Boton("Inventario.png", "Inventario.png", false);
         addObject(new Ballena(),0,1000);
@@ -42,6 +48,8 @@ public class Rio extends ScrollWorld
         iniciaPecesAzules();
         addObject(mochila,750,85);
         addObject(inventario,750, 170);
+        tiempo = new SimpleTimer();
+        tiempo.mark();
     }
     
     private void iniciaPecesAmarillos(){
@@ -58,4 +66,18 @@ public class Rio extends ScrollWorld
         }
     }
     
+    public void act(){
+        if(tiempo.millisElapsed()>120000){
+            refres = true;
+            tiempo.mark();
+        }
+        if(refres){
+            peces = this.getObjects(Pez.class);
+            this.removeObjects(peces);
+            iniciaPecesAmarillos();
+            iniciaPecesAzules();
+            refres = false;
+        }
+    }
+        
 }

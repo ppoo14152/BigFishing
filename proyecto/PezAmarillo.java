@@ -29,17 +29,19 @@ public class PezAmarillo extends Pez
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(anzuelo != null){
-            this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+50);
-            anclado = true;
-            if(this.getRotation() == 0){
-                img = this.getImage();
-                if(!direccion){
-                    img.mirrorHorizontally();
-                    this.setImage(img);
+            if(!((Anzuelo)anzuelo).existePez()||anclado){
+                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+50);
+                anclado = true;
+                if(this.getRotation() == 0){
+                    img = this.getImage();
+                    if(!direccion){
+                        img.mirrorHorizontally();
+                        this.setImage(img);
+                    }
+                    this.setRotation(-90);
                 }
-                this.setRotation(-90);
+                ((Anzuelo)anzuelo).hayPez();
             }
-          
         }
         else{
             this.setRotation(0);
