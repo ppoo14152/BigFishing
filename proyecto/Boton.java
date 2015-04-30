@@ -15,11 +15,13 @@ public class Boton extends Actor
      * Act - do whatever the Boton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Boton(String A, String B){
+    public Boton(String A, String B,boolean scale){
         iA = new GreenfootImage(A);
-        iA.scale(iA.getWidth()-150,iA.getHeight()-35);
         iB = new GreenfootImage(B);
-        iB.scale(iB.getWidth()-150,iB.getHeight()-35);
+        if(scale){
+            iA.scale(iA.getWidth()-150,iA.getHeight()-35);
+            iB.scale(iB.getWidth()-150,iB.getHeight()-35);
+        }
         wc = getWorld();
         bandera = false;
         touch = false;

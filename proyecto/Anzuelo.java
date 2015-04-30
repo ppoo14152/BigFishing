@@ -9,13 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Anzuelo extends ScrollActor
 {    /** The number of cells we move forward and backword */
     private static final int MOVE_AMOUNT = 5;
+    private static final int MOVE_REGRESO = 15;
     private int p = 0;
     private GreenfootImage an;
     private boolean baja;
     private int limit;
     private int move;
     private int posOriginalX, posOriginalY;
-    private boolean exitePez;
+    private boolean exitePez, regresa;
     private SimpleTimer timer = new SimpleTimer();
     /**
      * Move to face the mouse,
@@ -25,6 +26,7 @@ public class Anzuelo extends ScrollActor
     {
         baja = false;
         limit =0;
+        regresa = false;
         //existePez = false;
         an = new GreenfootImage(name);
         this.setImage(an);
@@ -41,22 +43,19 @@ public class Anzuelo extends ScrollActor
         return this.getGlobalY();
     }
     
-    public void act()
-    {
-        getWorld().setCameraDirection(270);
-    
-        if(Greenfoot.isKeyDown("w") && baja == true)
-        {
-                while(this.getGlobalY() != posOriginalY)
-                {
-                        if(this.getGlobalY() > 900 && p != 0)
-                        {
-                            p--;
-                            getWorld().cambiaFondo(p);
-                        }
-                        getWorld().moveCamera(MOVE_AMOUNT);
-                }
-                baja = false;
+    public void act(){
+            getWorld().setCameraDirection(270);
+            movimientoAnzuelo();
+            regresaBarco();
+            System.out.println(regresa);
+            System.out.println(this.getGlobalY());
+            System.out.println(posOriginalY);
+     }
+     
+     void movimientoAnzuelo(){
+         if(Greenfoot.isKeyDown("w") && baja == true){
+             regresa = true;
+             baja = false;
         }
         
         if(Greenfoot.isKeyDown("s") && baja == false)
@@ -66,7 +65,6 @@ public class Anzuelo extends ScrollActor
                 posOriginalY =this.getGlobalY();
                 getWorld().moveCamera(-100);
                 limit = this.getX()-30;
-                timer.mark();
         }
         
         if (Greenfoot.isKeyDown("a") && (isAtEdge() == false)) {
@@ -103,5 +101,18 @@ public class Anzuelo extends ScrollActor
             }
             getWorld().moveCamera(-MOVE_AMOUNT);
         }
-     }
+    }
+    
+    void regresaBarco(){
+        if(regresa){
+            if(this.getGlobalY() > 900 && p != 0){
+                p--;
+                getWorld().cambiaFondo(p);
+            }
+            getWorld().moveCamera(MOVE_REGRESO); 
+            if(regresa && this.getGlobalY() == 390){
+                regresa = false;
+            }
+        }
+    }
 }

@@ -27,8 +27,9 @@ public class PezAmarillo extends Pez
     
     public void act(){
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(anzuelo != null){
-            this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+60);
+            this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+50);
             anclado = true;
             if(this.getRotation() == 0){
                 img = this.getImage();
@@ -52,5 +53,7 @@ public class PezAmarillo extends Pez
                 img.mirrorHorizontally();
             }
         }
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
     }
 }

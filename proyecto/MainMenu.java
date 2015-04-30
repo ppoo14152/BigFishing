@@ -32,8 +32,8 @@ public class MainMenu extends ScrollWorld
         existen = false;
         ballenaA = new ImagenC("creditos/b1.png",250);
         ballenaB = new ImagenC("creditos/b2.png",750);
-        jugar = new Boton("botones/JugarB.png","botones/JugarA.png");
-        cred = new Boton("botones/CreditosB.png","botones/CreditosA.png");
+        jugar = new Boton("botones/JugarB.png","botones/JugarA.png",true);
+        cred = new Boton("botones/CreditosB.png","botones/CreditosA.png",true);
         fondo = new GreenfootImage(800,600);
         fondo.setColor(new Color(33,161,254));
         fondo.fill();
