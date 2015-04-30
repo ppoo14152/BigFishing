@@ -11,6 +11,7 @@ public class Rio extends ScrollWorld
 {
     private Jugador p1 = new Jugador("barcos/barcoMinimalistag.png");
     private Anzuelo anz = new Anzuelo("anzuelo1.png");
+    private Cuerda crda;
     private Boton mochila;
     private Boton inventario;
     private List<Pez> peces = new ArrayList<Pez>();
@@ -48,31 +49,37 @@ public class Rio extends ScrollWorld
         addObject(new Ballena(),0,1900);
         cambiaColorAgua(0);
         addCameraFollower(anz, 0, 0);
-        iniciaPecesAmarillos();
-        iniciaPecesAzules();
         addObject(mochila,750,85);
         addObject(inventario,750, 170);
         addObject(dinero, 750, 250);
         addObject(npeces,750, 310);
         tiempo = new SimpleTimer();
+        crda = new Cuerda(anz.PosX(),anz.PosT());
         tiempo.mark();
     }
     
     private void iniciaPecesAmarillos(){
-        int numTem = 3+Greenfoot.getRandomNumber(10);
+        int numTem = 4+Greenfoot.getRandomNumber(10);
         for(int i=0; i<numTem; i++){
-            addObject(new PezAmarillo(), Greenfoot.getRandomNumber(750), 550+Greenfoot.getRandomNumber(450));
+            addObject(new PezAmarillo(), Greenfoot.getRandomNumber(750), 500+Greenfoot.getRandomNumber(550));
         }
     }
     
     private void iniciaPecesAzules(){
-        int numTem = 2+Greenfoot.getRandomNumber(4);
+        int numTem = 3+Greenfoot.getRandomNumber(5);
         for(int i=0; i<numTem; i++){
             addObject(new PezAzul(), Greenfoot.getRandomNumber(650), 800+Greenfoot.getRandomNumber(450));
         }
     }
     
+    private void iniciaPecesMorados(){
+         int numTem = 3+Greenfoot.getRandomNumber(3);
+            for(int i=0; i<numTem; i++){
+            addObject(new PezMorado(), Greenfoot.getRandomNumber(650), 1200+Greenfoot.getRandomNumber(450));
+        }
+    }
     public void act(){
+        crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
         if(tiempo.millisElapsed()>120000){
             refres = true;
             tiempo.mark();
@@ -82,6 +89,7 @@ public class Rio extends ScrollWorld
             this.removeObjects(peces);
             iniciaPecesAmarillos();
             iniciaPecesAzules();
+            iniciaPecesMorados();
             refres = false;
         }
         dinero.actualiza(p1.getDinero());

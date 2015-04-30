@@ -43,6 +43,14 @@ public class Anzuelo extends ScrollActor
         return this.getGlobalY();
     }
     
+    public int PosX(){
+        return posOriginalX;
+    }
+    
+    public int PosT(){
+        return posOriginalY;
+    }
+    
     public void act(){
             getWorld().setCameraDirection(270);
             movimientoAnzuelo();

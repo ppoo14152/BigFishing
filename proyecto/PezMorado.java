@@ -16,11 +16,11 @@ public class PezMorado extends Pez
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public PezMorado(){
-        super(1+Greenfoot.getRandomNumber(4),5,3,4,5+Greenfoot.getRandomNumber(7));
+        super(2,5,3,4,7+Greenfoot.getRandomNumber(7));
         direccion = true;
         img = new GreenfootImage("pez3.png");
         img.mirrorHorizontally();
-        img.scale(img.getWidth()-600,img.getHeight()-450);
+        img.scale(img.getWidth()-670,img.getHeight()-470);
         this.setImage(img);
     }
     
@@ -29,7 +29,7 @@ public class PezMorado extends Pez
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(anzuelo != null){
             if(!((Anzuelo)anzuelo).existePez()||anclado){
-                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+50);
+                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+20);
                 anclado = true;
                 if(this.getRotation() == 0){
                     img = this.getImage();
