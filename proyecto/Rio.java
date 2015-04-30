@@ -19,6 +19,7 @@ public class Rio extends ScrollWorld
     private SimpleTimer tiempo;
     private TextoP dinero;
     private TextoP npeces;
+    private Banner ban;
 
     /**
      * Constructor for objects of class Rio.
@@ -29,6 +30,7 @@ public class Rio extends ScrollWorld
         super(800, 600, 1, 800, 2000);
         dinero = new TextoP("$");
         npeces = new TextoP("P");
+        ban = new Banner();
         refres = true;
         mochila = new Boton("mochila.png","mochila.png",false);
         inventario = new Boton("Inventario.png", "Inventario.png", false);
@@ -80,6 +82,15 @@ public class Rio extends ScrollWorld
     }
     public void act(){
         crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
+        if(mochila.getTouch())
+        {
+            addObject(ban,400,300);
+        }
+        
+        if(Greenfoot.isKeyDown("escape"))
+        {
+            removeObject(ban);
+        }
         if(tiempo.millisElapsed()>120000){
             refres = true;
             tiempo.mark();
