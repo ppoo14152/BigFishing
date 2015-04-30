@@ -10,8 +10,11 @@ public class Jugador extends ScrollActor
 {
     private GreenfootImage ju;
     private boolean aux;
+    private Actor pez;
+    private int nPeces;
     public Jugador(String n)
     {
+        nPeces = 0;
         ju = new GreenfootImage(n);
         this.setImage(ju);
         aux = false;
@@ -20,6 +23,11 @@ public class Jugador extends ScrollActor
     
     public void act() 
     {
+        pez = this.getOneIntersectingObject(Pez.class);
+        if(pez != null){
+            getWorld().removeObject(pez);
+            nPeces++;
+        }
         if(Greenfoot.isKeyDown("s")&&(getX()>0))
         {
             aux = true;

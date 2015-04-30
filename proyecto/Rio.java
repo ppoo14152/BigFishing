@@ -27,8 +27,6 @@ public class Rio extends ScrollWorld
         addObject(new Nube("nubes/nube1dia.png",1),10, 35);
         addObject(new Nube("nubes/nube1dia.png",2),25, 50);
         addObject(new Nube("nubes/nube1dia.png",2),78, 100);
-        addObject(mochila,750,85);
-        addObject(inventario,750, 170);
         addObject(new Ola("Olas/olaRioA.png", 2), 0, 370);
         addObject(p1,300 ,300);
         addCameraFollower(anz, -200, 90);
@@ -42,6 +40,8 @@ public class Rio extends ScrollWorld
         addCameraFollower(anz, 0, 0);
         iniciaPecesAmarillos();
         iniciaPecesAzules();
+        addObject(mochila,750,85);
+        addObject(inventario,750, 170);
     }
     
     private void iniciaPecesAmarillos(){

@@ -47,9 +47,6 @@ public class Anzuelo extends ScrollActor
             getWorld().setCameraDirection(270);
             movimientoAnzuelo();
             regresaBarco();
-            System.out.println(regresa);
-            System.out.println(this.getGlobalY());
-            System.out.println(posOriginalY);
      }
      
      void movimientoAnzuelo(){
@@ -105,7 +102,7 @@ public class Anzuelo extends ScrollActor
     
     void regresaBarco(){
         if(regresa){
-            if(this.getGlobalY() > 900 && p != 0){
+            if(this.getGlobalY() < 900 && p != 0){
                 p--;
                 getWorld().cambiaFondo(p);
             }
@@ -114,5 +111,7 @@ public class Anzuelo extends ScrollActor
                 regresa = false;
             }
         }
+        System.out.println(p);
+        System.out.println(this.getGlobalY());
     }
 }
