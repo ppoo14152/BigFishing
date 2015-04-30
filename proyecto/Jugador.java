@@ -12,12 +12,16 @@ public class Jugador extends ScrollActor
     private boolean aux;
     private Actor pez;
     private int nPeces;
+    private int energia;
+    private int vida;
     public Jugador(String n)
     {
         nPeces = 0;
         ju = new GreenfootImage(n);
         this.setImage(ju);
         aux = false;
+        energia = 100;
+        vida = 100;
     }
     
     
