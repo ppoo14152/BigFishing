@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Apr 30 01:15:27 CDT 2015
+#Thu Apr 30 00:49:42 CDT 2015
 target16.name=Pez
 target2.name=PezAzul
 class.ScrollWorld.superclass=greenfoot.World
@@ -56,7 +56,7 @@ target15.name=Barco
 target5.height=50
 target1.name=ScrollWorld
 target11.naviview.expanded=true
-version=2.7.1
+version=2.6.0
 target8.name=Mar
 class.MainMenu.superclass=ScrollWorld
 target22.name=Ballena
