@@ -102,7 +102,7 @@ public class Anzuelo extends ScrollActor
     
     void regresaBarco(){
         if(regresa){
-            if(this.getGlobalY() < 900 && p != 0){
+            if(this.getGlobalY() > 900 && p != 0){
                 p-=3;
                 getWorld().cambiaFondo(p);
             }
