@@ -31,7 +31,7 @@ public class Mar extends ScrollWorld
         super(800, 600, 1, 800, 2000);
         dinero = new TextoP("$");
         npeces = new TextoP("P");
-        ban = new Banner();
+        ban = new Banner("Inv.png");
         refres = true;
         mochila = new Boton("mochila.png","mochila.png",false);
         inventario = new Boton("Inventario.png", "Inventario.png", false);
@@ -47,10 +47,12 @@ public class Mar extends ScrollWorld
         addObject(new Ola("Olas/olaMar.png", 1), 0, 400);
         cambiaColorAgua(0);
         addCameraFollower(anz, 0, 0);
-        addObject(mochila,750,85);
-        addObject(inventario,750, 170);
+        //addObject(mochila,750,85);
+        //addObject(inventario,750, 170);
         addObject(dinero, 750, 250);
         addObject(npeces,750, 310);
+        addObject(mochila,750,85);
+        addObject(inventario,750, 170);
         tiempo = new SimpleTimer();
         crda = new Cuerda(anz.PosX(),anz.PosT());
         tiempo.mark();

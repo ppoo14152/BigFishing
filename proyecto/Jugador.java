@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Write a description of class Jugador here.
@@ -15,6 +17,7 @@ public class Jugador extends ScrollActor
     private int energia;
     private int vida;
     private int dinero;
+    private List<ScrollActor> l;
     public Jugador(String n)
     {
         nPeces = 0;
@@ -32,6 +35,7 @@ public class Jugador extends ScrollActor
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(pez != null){
             dinero+=((Pez)pez).valor();
+            l.add((ScrollActor)pez);
             getWorld().removeObject(pez);
             nPeces++;
             if(anzuelo != null){
