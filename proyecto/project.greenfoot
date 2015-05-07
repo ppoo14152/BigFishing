@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon May 04 14:50:38 CDT 2015
+#Wed May 06 20:43:31 CDT 2015
 target16.name=Boton
 dependency35.to=Anzuelo
 target2.name=MainMenu
@@ -303,6 +303,7 @@ dependency18.to=SimpleTimer
 class.Ola.superclass=ScrollActor
 dependency21.type=UsesDependency
 package.numDependencies=42
+class.Medicamento.superclass=greenfoot.Actor
 target17.type=ClassTarget
 dependency28.type=UsesDependency
 dependency25.from=Mar
@@ -471,6 +472,7 @@ target1.naviview.expanded=true
 target17.editor.width=900
 class.PezAzul.superclass=Pez
 target15.naviview.expanded=true
+class.Tienda.superclass=greenfoot.Actor
 class.Nube.superclass=ScrollActor
 target8.y=490
 target8.x=120
