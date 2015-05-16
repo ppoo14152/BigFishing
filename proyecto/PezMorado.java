@@ -25,37 +25,16 @@ public class PezMorado extends Pez
     }
     
     public void act(){
-        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
-        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
-        if(anzuelo != null){
-            if(!((Anzuelo)anzuelo).existePez()||anclado){
-                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+30);
-                anclado = true;
-                if(this.getRotation() == 0){
-                    img = this.getImage();
-                    if(!direccion){
-                        img.mirrorHorizontally();
-                        this.setImage(img);
-                    }
-                    this.setRotation(-90);
-                }
-                ((Anzuelo)anzuelo).hayPez();
-            }
+        super.act();
+        if(getGlobalX() > 1200){
+            direccion = false;
+            super.setDireccion(direccion);
+            img.mirrorHorizontally();
         }
-        else{
-            this.setRotation(0);
-            super.act();
-            if(getGlobalX() > 900){
-                direccion = false;
-                img.mirrorHorizontally();
-            }
-            if(getGlobalX() < -110){
-                direccion = true;
-                img.mirrorHorizontally();
-            }
+        if(getGlobalX() < -250){
+            direccion = true;
+            super.setDireccion(direccion);
+            img.mirrorHorizontally();
         }
-        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
-        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
-
     }    
 }

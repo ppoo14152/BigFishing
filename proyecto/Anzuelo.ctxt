@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=name
 comment0.target=Anzuelo(java.lang.String)
-comment0.text=\r\n\ Move\ to\ face\ the\ mouse,\r\n\ and\ listen\ to\ the\ up\ and\ down\ keys.\r\n
+comment0.text=\n\ Move\ to\ face\ the\ mouse,\n\ and\ listen\ to\ the\ up\ and\ down\ keys.\n
 comment1.params=
 comment1.target=int\ globalX()
 comment10.params=

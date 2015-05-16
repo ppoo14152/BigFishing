@@ -22,7 +22,17 @@ public class Ballena extends Pez
         this.setImage(img);
     }
     public void act(){
-        move(-2); 
+        super.act();
+        if(getGlobalX() > 2500){
+            direccion = false;
+            super.setDireccion(direccion);
+            img.mirrorHorizontally();
+        }
+        if(getGlobalX() < -2500){
+            direccion = true;
+            super.setDireccion(direccion);
+            img.mirrorHorizontally();
+        }
     }
     
 }

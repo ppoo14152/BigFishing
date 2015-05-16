@@ -14,7 +14,7 @@ public abstract class Pez extends ScrollActor
     private int resistencia;
     private int fuerza;
     private int agresividad;
-    private boolean direccion;
+    private boolean direccion, anclado;
     private int valorC;
     /**
      * Act - do whatever the Pez wants to do. This method is called whenever
@@ -27,22 +27,44 @@ public abstract class Pez extends ScrollActor
         resistencia = r;
         fuerza = f;
         agresividad = a;
+        anclado = false;
     }
+    
     public void act(){
-        if(getGlobalX() >  1200){
-            direccion = false;
-        }
-        if(getGlobalX() < -120){
-            direccion = true;
-        }
         if(direccion){
             move(velocidad);
         }else{
             move(-velocidad);
         }
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
+        if(anzuelo != null){
+            if(!((Anzuelo)anzuelo).existePez()||anclado){
+                this.setGlobalLocation(((Anzuelo)anzuelo).globalX(), ((Anzuelo)anzuelo).globalY()+40);
+                anclado = true;
+                if(this.getRotation() == 0){
+                    img = this.getImage();
+                    if(!direccion){
+                        img.mirrorHorizontally();
+                        this.setImage(img);
+                    }
+                    this.setRotation(-90);
+                }
+                ((Anzuelo)anzuelo).hayPez();
+            }
+        }
+        else{
+            this.setRotation(0);
+        }
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
+        anzuelo = this.getOneIntersectingObject(Anzuelo.class);
     }
     
     public int valor(){
         return valorC;
+    }
+    
+    public void setDireccion(boolean dir){
+        direccion =  dir;
     }
 }
