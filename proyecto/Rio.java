@@ -84,16 +84,16 @@ public class Rio extends ScrollWorld
     }
     public void act(){
         crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
-        //if(mochila.getTouch())
-        //{
-        //    addObject(ban,400,300);
-        //}
+        /*if(mochila.getTouch())
+        {
+        }*/
         
         if(inventario.getTouch())
         {
             addObject(ti,400,300);
             ti.muestra();
-        }    
+        }
+  
         
         if(Greenfoot.isKeyDown("escape"))
         {

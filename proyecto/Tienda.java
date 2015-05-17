@@ -13,7 +13,7 @@ public class Tienda extends Actor
     private int banAnz, banCom;
     private Boton gas;
     private Boton anz;
-    private Boton can;
+    //private Boton can;
     private Boton com;
     private Boton lancha;
     private Jugador player;
@@ -36,21 +36,19 @@ public class Tienda extends Actor
     public Tienda(Jugador p, Anzuelo a)
     {
         touch = false;
-        //setImage(icono);
         banAnz = 0;
         banCom = 0;
         fondo = new Banner("Inv.png");
         gas = new Boton("gas.png", "gas.png", false);
         anz = new Boton("botonAnzuelo.png", "botonAnzuelo.png", false);
-        can = new Boton("botonCana.png", "botonCana.png", false);
         com = new Boton("botonProv.png", "botonProv.png", false);
         lancha = new Boton("bote.png", "bote.png", false);
         player = p;
         an = a;
         Gas = new TextoP("Gas: $15", 30);
         tAnzuelo = new TextoP("Anzuelos",30);
-        tCana = new TextoP("Cañas",30);
-        tProv = new TextoP("Alimentos",30);
+        tCana = new TextoP("Alimentos",30);
+        tProv = new TextoP("Barcos",30);
         titulo = new TextoP("Tienda",40);
         tex1 = new TextoP("",30);
         tex2 = new TextoP("",30);
@@ -76,18 +74,17 @@ public class Tienda extends Actor
         getWorld().addObject(Gas,290, 230);
         getWorld().addObject(anz,400,180);
         getWorld().addObject(tAnzuelo,400,230);
-        getWorld().addObject(can,500,180);
         getWorld().addObject(tCana,500,230);
-        getWorld().addObject(com,300,300);
+        getWorld().addObject(com,500,180);
         getWorld().addObject(tProv,300,350);
-        getWorld().addObject(lancha,400,300);
+        getWorld().addObject(lancha,300,300);
         getWorld().addObject(tex1,400,350);
         getWorld().addObject(tex2,500,350);
         titulo.setTexto("Tienda");
         Gas.setTexto("Gas: $15");
         tAnzuelo.setTexto("Anzuelos");
-        tCana.setTexto("Caña");
-        tProv.setTexto("Comida");
+        tCana.setTexto("Alimentos");
+        tProv.setTexto("Barcos");
         tex1.setTexto("");
         tex2.setTexto("");
 
@@ -102,10 +99,6 @@ public class Tienda extends Actor
         getWorld().addObject(An4,300,300);
         getWorld().addObject(An5,400,300);
         getWorld().addObject(An6,500,300);
-        /*getWorld().removeObject(Gas);
-        getWorld().removeObject(tAnzuelo);
-        getWorld().removeObject(tCana);
-        getWorld().removeObject(tProv);*/
         banAnz = 1;
     }
 
@@ -120,14 +113,12 @@ public class Tienda extends Actor
         {
             removeCom();
         }
-        //else
-        //{
+        
             if(touch == true)
             {
                 getWorld().removeObject(fondo);
                 getWorld().removeObject(gas);
                 getWorld().removeObject(anz);
-                getWorld().removeObject(can);
                 getWorld().removeObject(com);
                 getWorld().removeObject(lancha);
                 getWorld().removeObject(Gas);
@@ -139,7 +130,6 @@ public class Tienda extends Actor
                 titulo.setTexto("");
                 touch = false;
             }
-        //}
     }
 
     public void removeAnz()
@@ -156,7 +146,6 @@ public class Tienda extends Actor
     
     public void muestraCom()
     {
-        getWorld().removeObject(fondo);
         getWorld().addObject(fondo, 400, 300);
         getWorld().addObject(v1,300,180);
         getWorld().addObject(v2,400,180);
@@ -167,7 +156,6 @@ public class Tienda extends Actor
     
     public void removeCom()
     {
-        //getWorld().removeObject(fondo);
         getWorld().removeObject(v1);
         getWorld().removeObject(v2);
         getWorld().removeObject(e1);
@@ -187,6 +175,8 @@ public class Tienda extends Actor
 
         if(anz.getTouch())
         {
+            //getWorld().removeObject(fondo);
+            muestraAnz();
             titulo.setTexto("Anzuelos");
             Gas.setTexto("Gratis");
             tAnzuelo.setTexto("20");
@@ -194,7 +184,6 @@ public class Tienda extends Actor
             tProv.setTexto("40");
             tex1.setTexto("50");
             tex2.setTexto("60");
-            muestraAnz();
         }
         
         if(An1.getTouch())
@@ -249,6 +238,8 @@ public class Tienda extends Actor
         
         if(com.getTouch())
         {
+            //getWorld().removeObject(fondo);
+            muestraCom();
             titulo.setTexto("Comida");
             Gas.setTexto("+50: $40");
             tAnzuelo.setTexto("+25: $20");
@@ -256,7 +247,6 @@ public class Tienda extends Actor
             tProv.setTexto("+25: $10");
             tex1.setTexto("");
             tex2.setTexto("");
-            muestraCom();
         }
         
         if(v1.getTouch())
