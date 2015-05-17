@@ -17,6 +17,7 @@ public class Jugador extends ScrollActor
     private int energia;
     private int vida;
     private int dinero;
+    private int gas;
     //private List<ScrollActor> l;
     public Jugador(String n)
     {
@@ -27,6 +28,7 @@ public class Jugador extends ScrollActor
         aux = false;
         energia = 100;
         vida = 100;
+        gas = 100;
     }
     
     
@@ -64,5 +66,42 @@ public class Jugador extends ScrollActor
      
      public int getNPeces(){
          return nPeces;
+     }
+     
+     public int getGas()
+     {
+         return gas;
+     }
+     
+     public void restaDinero(int cant)
+     {
+         dinero -=cant;
+     }
+     
+     public void aumentaGas(int cant)
+     {        
+         gas = gas + cant;
+         if(gas > 100)
+         {
+            gas = 100;
+         }
+     }
+     
+     public void aumentaVida(int cant)
+     {
+         vida += cant;
+         if(vida > 100)
+         {
+             vida = 100;
+         }
+     }
+     
+     public void aumentaEnergia(int cant)
+     {
+         energia += cant;
+         if(energia > 100)
+         {
+             energia = 100;
+         }
      }
 }    

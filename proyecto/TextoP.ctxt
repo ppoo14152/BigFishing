@@ -1,9 +1,13 @@
 #BlueJ class context
 comment0.params=s
 comment0.target=TextoP(java.lang.String)
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Dinero\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment1.params=
-comment1.target=void\ act()
-comment2.params=c
-comment2.target=void\ actualiza(int)
-numComments=3
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Dinero\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=s\ tamanio
+comment1.target=TextoP(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=c
+comment3.target=void\ actualiza(int)
+comment4.params=t
+comment4.target=void\ setTexto(java.lang.String)
+numComments=5

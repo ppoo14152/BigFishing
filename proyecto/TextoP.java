@@ -24,20 +24,42 @@ public class TextoP extends Actor
         img = new GreenfootImage(simbol+cont, tam, new Color(78,78,78),new Color(255,255,255,0));
         this.setImage(img);
     }
+
+    public TextoP(String s, int tamanio)
+    {
+        simbol = s;
+        cont = -1;
+        tam = tamanio;
+        img = new GreenfootImage(simbol, tam, new Color(78,78,78),new Color(255,255,255,0));
+        this.setImage(img);
+    }
+
     public void act() 
     {
-        if(cont>99){
-            tam = 42;
-        }
-        if(cont>999){
-            tam = 36;
-        }
+        if(cont != -1){
+            if(cont>99){
+                tam = 42;
+            }
+            if(cont>999){
+                tam = 36;
+            }
+        
         img = new GreenfootImage(simbol+cont, tam, new Color(78,78,78),new Color(255,255,255,0));
         this.setImage(img);
-        
+    }
+    else
+    {
+        img = new GreenfootImage(simbol, tam, new Color(78,78,78),new Color(255,255,255,0));
+        this.setImage(img);
+    }
     }  
-    
+
     public void actualiza(int c){
         cont=c;
+    }
+    
+    public void setTexto(String t)
+    {
+        simbol = t;
     }
 }

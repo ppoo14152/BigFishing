@@ -135,4 +135,10 @@ public class Anzuelo extends ScrollActor
     public void hayPez(){
         existePez = true;
     }
+    
+    public void setAnzuelo(String name)
+    {
+        an = new GreenfootImage(name);
+        this.setImage(an);
+    }
 }

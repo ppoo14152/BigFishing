@@ -1,10 +1,18 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Tienda()
+comment0.params=p\ a
+comment0.target=Tienda(Jugador,\ Anzuelo)
 comment1.params=
 comment1.target=void\ muestra()
 comment2.params=
-comment2.target=void\ remove()
+comment2.target=void\ muestraAnz()
 comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment3.target=void\ remove()
+comment4.params=
+comment4.target=void\ removeAnz()
+comment5.params=
+comment5.target=void\ muestraCom()
+comment6.params=
+comment6.target=void\ removeCom()
+comment7.params=
+comment7.target=void\ act()
+numComments=8

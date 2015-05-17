@@ -32,7 +32,7 @@ public class Rio extends ScrollWorld
         dinero = new TextoP("$");
         npeces = new TextoP("P");
         //ban = new Banner("Inv.png");
-        ti = new Tienda(/*"Inventario.png"*/);
+        ti = new Tienda(p1, anz);
         refres = true;
         mochila = new Boton("mochila.png","mochila.png",false);
         inventario = new Boton("Inventario.png", "Inventario.png", false);
