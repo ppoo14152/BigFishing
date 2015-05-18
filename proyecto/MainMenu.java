@@ -54,18 +54,12 @@ public class MainMenu extends ScrollWorld
     
     public void act(){
         if(!mfondo.isPlaying()){
-            mfondo.play();
+           // mfondo.play();
         }
         
         if(jugar.getTouch()){
-            if(Greenfoot.getRandomNumber(2) == 0){
-                mfondo.stop(); 
-                Greenfoot.setWorld(new Mar());
-            }
-            else{
-                mfondo.stop();
+          
                 Greenfoot.setWorld(new Rio());
-            }
         }
         
         if(cred.getTouch()){

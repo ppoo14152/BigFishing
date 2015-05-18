@@ -64,7 +64,7 @@ public class Anzuelo extends ScrollActor
             movimientoAnzuelo();
             regresaBarco();
             //System.out.println(p);
-            System.out.println(profundidad);
+            //System.out.println(profundidad);
      }
      
     private void movimientoAnzuelo(){

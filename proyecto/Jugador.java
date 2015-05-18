@@ -25,7 +25,7 @@ public class Jugador extends ScrollActor
     public Jugador(String n)
     {
         nPeces = 0;
-        dinero = 100;
+        dinero = 20;
         ju = new GreenfootImage(n);
         this.setImage(ju);
         aux = false;
@@ -36,7 +36,7 @@ public class Jugador extends ScrollActor
     
     
     public void act() {
-        System.out.println(aux);
+       // System.out.println(aux);
         pez = this.getOneIntersectingObject(Pez.class);
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(pez != null){
