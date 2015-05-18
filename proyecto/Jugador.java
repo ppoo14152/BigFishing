@@ -14,6 +14,9 @@ public class Jugador extends ScrollActor
     private boolean aux;
     private Actor pez,anzuelo;
     private int nPeces;
+    
+    private int EnergiaMax;
+    
     private int energia;
     private int vida;
     private int dinero;
@@ -22,22 +25,22 @@ public class Jugador extends ScrollActor
     public Jugador(String n)
     {
         nPeces = 0;
-        dinero = 0;
+        dinero = 100;
         ju = new GreenfootImage(n);
         this.setImage(ju);
         aux = false;
-        energia = 10;
+        energia = EnergiaMax = 10;
         vida = 50;
         gas = 50;
     }
     
     
     public void act() {
+        System.out.println(aux);
         pez = this.getOneIntersectingObject(Pez.class);
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(pez != null){
             dinero+=((Pez)pez).valor();
-            //l.add((ScrollActor)pez);
             getWorld().removeObject(pez);
             nPeces++;
             if(anzuelo != null){
@@ -52,13 +55,17 @@ public class Jugador extends ScrollActor
         {
             aux = false;
         }
-        if (Greenfoot.isKeyDown("a")&& getX()>98 && aux == false) {
+        if (Greenfoot.isKeyDown("a")&& getX()>98 && aux == false && gas > 1) {
             setLocation(getX() - 3, getY());
         }
-        if (Greenfoot.isKeyDown("d")&& getX()<800 && aux == false) {
+        if (Greenfoot.isKeyDown("d")&& getX()<800 && aux == false && gas > 1) {
             setLocation(getX() + 3, getY());
         }
      }
+     
+     public boolean getBajoAgua(){
+         return aux;
+     }    
      
      public int getVida(){
          return vida;

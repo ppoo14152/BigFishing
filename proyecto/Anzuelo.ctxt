@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=name
 comment0.target=Anzuelo(java.lang.String)
-comment0.text=\r\n\ Move\ to\ face\ the\ mouse,\r\n\ and\ listen\ to\ the\ up\ and\ down\ keys.\r\n
+comment0.text=\n\ Move\ to\ face\ the\ mouse,\n\ and\ listen\ to\ the\ up\ and\ down\ keys.\n
 comment1.params=
 comment1.target=int\ globalX()
 comment10.params=
@@ -16,6 +16,8 @@ comment14.params=
 comment14.target=boolean\ getActivo()
 comment15.params=po
 comment15.target=void\ setActivo(boolean)
+comment16.params=ac
+comment16.target=void\ setActivoBarco(boolean)
 comment2.params=
 comment2.target=int\ globalY()
 comment3.params=
@@ -32,4 +34,4 @@ comment8.params=
 comment8.target=boolean\ existePez()
 comment9.params=
 comment9.target=void\ noHayPez()
-numComments=16
+numComments=17

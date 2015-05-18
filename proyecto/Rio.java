@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Rio extends ScrollWorld
 {
+    private int auxA, auxB;
     private Vida barV;
     private Potencia barP;
     private Gas barG;
@@ -33,10 +34,10 @@ public class Rio extends ScrollWorld
     public Rio()
     {
         super(800, 600, 1, 800, 2000);
+        auxA = auxB = 0;
         dinero = new TextoP("$");
         npeces = new TextoP("P");
         //ban = new Banner("Inv.png");
-        ti = new Tienda(p1, anz);
         barV = new Vida(p1.getVida(),p1.getVida());
         barP = new Potencia(p1.getPotencia(),p1.getPotencia());
         barG = new Gas(p1.getGas(),p1.getGas());
@@ -70,6 +71,7 @@ public class Rio extends ScrollWorld
         tiempo = new SimpleTimer();
         tiempoAnz = new SimpleTimer();
         crda = new Cuerda(anz.PosX(),anz.PosT());
+        ti = new Tienda(p1, anz, barG, barP, barV);
         tiempo.mark();
         tiempoAnz.mark();
     }
@@ -134,22 +136,49 @@ public class Rio extends ScrollWorld
     }
     
     public void actBar(){
+        
         p1.setVida(barV.getValue());
         p1.setPotencia(barP.getValue());
         p1.setGas(barG.getValue());
         
         if(anz.getProfundidad()!=0){
-            barP.add(-((int)(barP.getValue()*2)));
+            barP.setSpeed(8);
+            barP.add(-1);
             if(barP.getValue() < 2){
                 anz.setActivo(false);
             }
         }
         else{
-            if(tiempoAnz.millisElapsed()>200){
+            //if(tiempoAnz.millisElapsed()>10){
                 anz.setActivo(true);
+                barP.setSpeed(40);
                 barP.add(anz.getRes());
                 tiempoAnz.mark();
-            }
+            //}//
         }
+        
+        if ((Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("d")) && p1.getBajoAgua() != true){
+            if((auxA%25) == 0){
+                barG.add(-1);
+                auxA=0;
+            }
+            auxA++;
+        }
+        
+        if(p1.getGas() < 2){
+            anz.setActivoBarco(false);
+        }
+        else{
+            anz.setActivoBarco(true);
+        }
+        
+        if(p1.getGas() < 1){
+            if((auxB%30) == 0){
+                barV.add(-1);
+                auxB=0;
+            }
+            auxB++;
+        }
+            
     }
 }

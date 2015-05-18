@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=p\ a
-comment0.target=Tienda(Jugador,\ Anzuelo)
+comment0.params=p\ a\ g\ pp\ v
+comment0.target=Tienda(Jugador,\ Anzuelo,\ Gas,\ Potencia,\ Vida)
 comment1.params=
 comment1.target=void\ muestra()
 comment2.params=

@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tienda extends Actor
 {
+    private Gas bGas;
+    private Potencia bPot;
+    private Vida bVid;
     private Banner fondo;
     private boolean touch;
     private int banAnz, banCom;
@@ -33,8 +36,11 @@ public class Tienda extends Actor
     private Boton An6;
     private Boton v1, v2;
     private Boton e1, e2;
-    public Tienda(Jugador p, Anzuelo a)
+    public Tienda(Jugador p, Anzuelo a, Gas g, Potencia pp, Vida v)
     {
+        bVid = v;
+        bPot = pp;
+        bGas = g;
         touch = false;
         banAnz = 0;
         banCom = 0;
@@ -169,7 +175,8 @@ public class Tienda extends Actor
         {
             if(player.getDinero() > 10)
             {
-                player.aumentaGas(10);
+                //player.aumentaGas(50);
+                bGas.add(50);
             }
         }
 
@@ -197,6 +204,7 @@ public class Tienda extends Actor
             {
                 player.restaDinero(20);
                 an.setAnzuelo("anzuelo2.png");
+                bPot.setMax(30);
             }
         }
         
@@ -206,6 +214,7 @@ public class Tienda extends Actor
             {
                 player.restaDinero(30);
                 an.setAnzuelo("anzuelo3.png");
+                bPot.setMax(90);
             }
         }
         
@@ -215,6 +224,7 @@ public class Tienda extends Actor
             {
                 player.restaDinero(40);
                 an.setAnzuelo("anzuelo4.png");
+                bPot.setMax(150);
             }
         }
         
@@ -224,6 +234,7 @@ public class Tienda extends Actor
             {
                 player.restaDinero(50);
                 an.setAnzuelo("anzuelo5.png");
+                bPot.setMax(210);
             }
         }
         
@@ -233,6 +244,7 @@ public class Tienda extends Actor
             {
                 player.restaDinero(60);
                 an.setAnzuelo("anzuelo6.png");
+                bPot.setMax(270);
             }
         }
         

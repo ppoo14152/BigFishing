@@ -13,6 +13,7 @@ public class Anzuelo extends ScrollActor
     private int restaurar;
     private int profundidad;
     private boolean activo;
+    private boolean activoBarco;
     private int p = 0;
     private GreenfootImage an;
     private boolean baja;
@@ -27,6 +28,7 @@ public class Anzuelo extends ScrollActor
      */
     public Anzuelo(String name)
     {
+        activoBarco = true;
         activo = true;
         restaurar = 1;
         profundidad = 0;
@@ -80,7 +82,7 @@ public class Anzuelo extends ScrollActor
                 limit = this.getX()-30;
         }
         
-        if (Greenfoot.isKeyDown("a") && (isAtEdge() == false)) {
+        if (Greenfoot.isKeyDown("a") && (isAtEdge() == false) && activoBarco == true) {
             if(baja == false)
             {
                 setLocation(getX() - 3, getY());
@@ -92,7 +94,7 @@ public class Anzuelo extends ScrollActor
             }
         }
         
-        if (Greenfoot.isKeyDown("d") && (getX()<696)) 
+        if (Greenfoot.isKeyDown("d") && (getX()<696) && activoBarco == true) 
         {
             if(baja == false)
             {
@@ -165,5 +167,9 @@ public class Anzuelo extends ScrollActor
     
     public void setActivo(boolean po){
         activo = po;
+    }
+    
+    public void setActivoBarco(boolean ac){
+        activoBarco = ac;
     }
 }
