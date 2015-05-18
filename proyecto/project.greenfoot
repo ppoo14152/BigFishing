@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun May 17 13:44:41 CDT 2015
+#Sun May 17 19:08:42 CDT 2015
 target16.name=Cielo
 dependency35.to=Anzuelo
 target26.width=80
@@ -163,6 +163,7 @@ dependency41.to=Cuerda
 dependency16.to=BarcoG
 target16.naviview.expanded=true
 target1.editor.y=0
+class.Ayuda.superclass=greenfoot.Actor
 target1.editor.x=0
 target21.name=Pez
 target18.editor.y=21
@@ -203,7 +204,6 @@ target23.editor.width=1936
 dependency30.type=UsesDependency
 target26.type=ClassTarget
 target2.height=50
-class.Inventario.superclass=greenfoot.Actor
 class.SimpleTimer.superclass=
 dependency37.type=UsesDependency
 dependency34.from=Jugador
@@ -451,6 +451,7 @@ target6.showInterface=false
 dependency38.from=PezAzul
 target23.naviview.expanded=true
 target10.naviview.expanded=true
+class.Nivel.superclass=greenfoot.Actor
 class.ImagenC.superclass=ScrollActor
 target16.typeParameters=
 target2.typeParameters=

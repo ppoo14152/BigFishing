@@ -90,8 +90,12 @@ public class Rio extends ScrollWorld
         
         if(inventario.getTouch())
         {
-            addObject(ti,400,300);
-            ti.muestra();
+            if(p1.getDinero() > 20)
+            {
+                p1.restaDinero(20);
+                addObject(ti,400,300);
+                ti.muestra();
+            }
         }
   
         
