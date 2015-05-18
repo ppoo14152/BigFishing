@@ -23,6 +23,7 @@ public class Rio extends ScrollWorld
     private SimpleTimer tiempoAnz;
     private TextoP dinero;
     private TextoP npeces;
+    //private Banner ban;
     private Tienda ti;
 
     /**
@@ -95,17 +96,32 @@ public class Rio extends ScrollWorld
     }
     public void act(){
         crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
+<<<<<<< HEAD
+=======
+        /*if(mochila.getTouch())
+        {
+        }*/
+>>>>>>> d45fb3610a4730f6d5a6f8ed1bb5831411ed5357
+        /*if(mochila.getTouch())
+        {
+        }*/
         
         if(inventario.getTouch())
         {
-            addObject(ti,400,300);
-            ti.muestra();
-        }    
+            if(p1.getDinero() > 20)
+            {
+                p1.restaDinero(20);
+                addObject(ti,400,300);
+                ti.muestra();
+            }
+        }
+  
         
         if(Greenfoot.isKeyDown("escape"))
         {
             ti.remove();
             removeObject(ti);
+            //repaint();
         }
         
         if(tiempo.millisElapsed()>120000){
