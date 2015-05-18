@@ -74,13 +74,13 @@ public class Tienda extends Actor
     public void muestra()
     {
         touch = true;
-        getWorld().addObject(titulo,400,40);
+        getWorld().addObject(titulo,400,85);
         getWorld().addObject(fondo, 400, 300);
         getWorld().addObject(gas,300,180);
         getWorld().addObject(Gas,290, 230);
         getWorld().addObject(anz,400,180);
         getWorld().addObject(tAnzuelo,400,230);
-        getWorld().addObject(tCana,500,230);
+        getWorld().addObject(tCana,530,230);
         getWorld().addObject(com,500,180);
         getWorld().addObject(tProv,300,350);
         getWorld().addObject(lancha,300,300);
