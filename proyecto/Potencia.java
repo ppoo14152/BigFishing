@@ -15,7 +15,7 @@ public class Potencia extends StatBar
      */
     public Potencia(int maximo, int actual){
         super(new Color(255, 255, 0), 250, 20, Style.SMOOTH, maximo, actual);
-        setSpeed(10);
+        setSpeed(8);
     }
     public void act(){
         super.act();
