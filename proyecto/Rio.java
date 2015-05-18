@@ -23,8 +23,9 @@ public class Rio extends ScrollWorld
     private SimpleTimer tiempoAnz;
     private TextoP dinero;
     private TextoP npeces;
-    //private Banner ban;
+    private Nivel level;
     private Tienda ti;
+    private Ayuda ay;
 
     /**
      * Constructor for objects of class Rio.
@@ -35,8 +36,9 @@ public class Rio extends ScrollWorld
         super(800, 600, 1, 800, 2000);
         dinero = new TextoP("$");
         npeces = new TextoP("P");
-        //ban = new Banner("Inv.png");
+        level = new Nivel("Nivel1.png");
         ti = new Tienda(p1, anz);
+        ay = new Ayuda();
         barV = new Vida(p1.getVida(),p1.getVida());
         barP = new Potencia(p1.getPotencia(),p1.getPotencia());
         barG = new Gas(p1.getGas(),p1.getGas());
@@ -67,6 +69,7 @@ public class Rio extends ScrollWorld
         addObject(barV, 130, 20);
         addObject(barP, 130, 40);
         addObject(barG, 130, 60);
+        addObject(level, 400, 60);
         tiempo = new SimpleTimer();
         tiempoAnz = new SimpleTimer();
         crda = new Cuerda(anz.PosX(),anz.PosT());
@@ -106,12 +109,17 @@ public class Rio extends ScrollWorld
                 ti.muestra();
             }
         }
-  
+        
+        if(mochila.getTouch())
+        {
+            addObject(ay, 400, 300);
+        }
         
         if(Greenfoot.isKeyDown("escape"))
         {
             ti.remove();
             removeObject(ti);
+            removeObject(ay);
             //repaint();
         }
         
