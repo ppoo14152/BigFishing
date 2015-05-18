@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=j
+comment0.target=Record(Jugador)
+comment1.params=
+comment1.target=void\ obtenInfo()
+comment2.params=
+comment2.target=void\ fin()
+comment3.params=punt
+comment3.target=void\ guarda(int)
+comment4.params=
+comment4.target=void\ act()
+numComments=5

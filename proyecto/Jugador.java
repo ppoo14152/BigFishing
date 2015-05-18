@@ -21,6 +21,7 @@ public class Jugador extends ScrollActor
     private int vida;
     private int dinero;
     private int gas;
+    private UserInfo punt;
     //private List<ScrollActor> l;
     public Jugador(String n)
     {

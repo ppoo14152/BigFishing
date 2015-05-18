@@ -27,6 +27,8 @@ public class Rio extends ScrollWorld
     private Nivel level;
     private Tienda ti;
     private Ayuda ay;
+    private Record r;
+    private ScoreBoard sb;
 
     /**
      * Constructor for objects of class Rio.
@@ -39,8 +41,10 @@ public class Rio extends ScrollWorld
         dinero = new TextoP("$");
         npeces = new TextoP("P");
         level = new Nivel("Nivel1.png");
+        sb = new ScoreBoard(500,400);
         ti = new Tienda(p1, anz, barG, barP, barV);
         ay = new Ayuda();
+        r = new Record(p1);
         barV = new Vida(p1.getVida(),p1.getVida());
         barP = new Potencia(p1.getPotencia(),p1.getPotencia());
         barG = new Gas(p1.getGas(),p1.getGas());
@@ -188,6 +192,11 @@ public class Rio extends ScrollWorld
             }
             auxB++;
         }
-            
+        
+        if(barV.getValue() == 0)
+        {
+            r.fin();
+            addObject(sb,400, 300);
+        }
     }
 }
