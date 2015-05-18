@@ -26,9 +26,9 @@ public class Jugador extends ScrollActor
         ju = new GreenfootImage(n);
         this.setImage(ju);
         aux = false;
-        energia = 100;
-        vida = 100;
-        gas = 100;
+        energia = 10;
+        vida = 50;
+        gas = 50;
     }
     
     
@@ -58,6 +58,26 @@ public class Jugador extends ScrollActor
         if (Greenfoot.isKeyDown("d")&& getX()<800 && aux == false) {
             setLocation(getX() + 3, getY());
         }
+     }
+     
+     public int getVida(){
+         return vida;
+     }
+     
+     public int getPotencia(){
+         return energia;
+     }
+     
+     public void setVida(int v){
+         vida = v;
+     }
+     
+     public void setGas(int g){
+         gas = g;
+     }
+     
+     public void setPotencia(int p){
+         energia = p;
      }
      
      public int getDinero(){
