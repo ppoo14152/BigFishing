@@ -10,6 +10,9 @@ public class Anzuelo extends ScrollActor
 {    /** The number of cells we move forward and backword */
     private static final int MOVE_AMOUNT = 5;
     private static final int MOVE_REGRESO = 15;
+    private int restaurar;
+    private int profundidad;
+    private boolean activo;
     private int p = 0;
     private GreenfootImage an;
     private boolean baja;
@@ -24,6 +27,9 @@ public class Anzuelo extends ScrollActor
      */
     public Anzuelo(String name)
     {
+        activo = true;
+        restaurar = 1;
+        profundidad = 0;
         baja = false;
         limit =0;
         regresa = false;
@@ -55,6 +61,8 @@ public class Anzuelo extends ScrollActor
             getWorld().setCameraDirection(270);
             movimientoAnzuelo();
             regresaBarco();
+            //System.out.println(p);
+            System.out.println(profundidad);
      }
      
     private void movimientoAnzuelo(){
@@ -97,8 +105,8 @@ public class Anzuelo extends ScrollActor
             }
         }
         
-        if (Greenfoot.isKeyDown("s") && p<148 && baja == true) {
-            
+        if (Greenfoot.isKeyDown("s") && p<148 && baja == true && activo == true) {
+            profundidad++;
             if(this.getGlobalY() > 900)
             {   
                 p++;
@@ -120,6 +128,7 @@ public class Anzuelo extends ScrollActor
             getWorld().moveCamera(MOVE_REGRESO); 
             if(regresa && this.getGlobalY() == 390){
                 regresa = false;
+                profundidad = 0;
             }
         }
     }
@@ -140,5 +149,21 @@ public class Anzuelo extends ScrollActor
     {
         an = new GreenfootImage(name);
         this.setImage(an);
+    }
+    
+    public int getProfundidad(){
+        return profundidad;
+    }
+    
+    public int getRes(){
+        return restaurar;
+    }
+    
+    public boolean getActivo(){
+        return activo;
+    }
+    
+    public void setActivo(boolean po){
+        activo = po;
     }
 }
