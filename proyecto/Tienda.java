@@ -286,17 +286,17 @@ public class Tienda extends Actor
             if(player.getDinero() > 30)
             {
                 player.restaDinero(30);
-                bVid.setMax(bVid.getMax()+25);
+                bVid.setMax(bVid.getMax()+50);
                 //player.aumentaEnergia(50);
             }
         }
         
-        if(e1.getTouch())
+        if(e2.getTouch())
         {
             if(player.getDinero() > 10)
             {
                 player.restaDinero(10);
-                bVid.setMax(bVid.getMax()+50);
+                bVid.setMax(bVid.getMax()+25);
                 //player.aumentaEnergia(25);
             }
         }
