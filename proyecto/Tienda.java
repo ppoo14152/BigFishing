@@ -51,10 +51,10 @@ public class Tienda extends Actor
         lancha = new Boton("bote.png", "bote.png", false);
         player = p;
         an = a;
-        Gas = new TextoP("Gas: $15", 30);
-        tAnzuelo = new TextoP("Anzuelos",30);
-        tCana = new TextoP("Alimentos",30);
-        tProv = new TextoP("Barcos",30);
+        Gas = new TextoP("Gas: $15", 25);
+        tAnzuelo = new TextoP("Anzuelos",25);
+        tCana = new TextoP("Alimentos",25);
+        tProv = new TextoP("Barcos",25);
         titulo = new TextoP("Tienda",40);
         tex1 = new TextoP("",30);
         tex2 = new TextoP("",30);
@@ -266,7 +266,8 @@ public class Tienda extends Actor
             if(player.getDinero() > 40)
             {
                 player.restaDinero(40);
-                player.aumentaVida(50);
+                bVid.add(50);
+                //player.aumentaVida(50);
             }
         }
         
@@ -275,7 +276,8 @@ public class Tienda extends Actor
             if(player.getDinero() > 20)
             {
                 player.restaDinero(20);
-                player.aumentaVida(25);
+                bVid.add(20);
+                //player.aumentaVida(25);
             }
         }
         
@@ -284,7 +286,8 @@ public class Tienda extends Actor
             if(player.getDinero() > 30)
             {
                 player.restaDinero(30);
-                player.aumentaEnergia(50);
+                bVid.setMax(bVid.getMax()+25);
+                //player.aumentaEnergia(50);
             }
         }
         
@@ -293,7 +296,8 @@ public class Tienda extends Actor
             if(player.getDinero() > 10)
             {
                 player.restaDinero(10);
-                player.aumentaEnergia(25);
+                bVid.setMax(bVid.getMax()+50);
+                //player.aumentaEnergia(25);
             }
         }
     }
