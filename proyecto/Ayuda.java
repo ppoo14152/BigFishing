@@ -8,8 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ayuda extends Actor
 {
-    private TextoP Titulo;
+    private GreenfootImage texto;
     
+    public Ayuda()
+    {
+        texto = new GreenfootImage("ayuda.png");
+        setImage(texto);
+    }
     public void act() 
     {
         // Add your action code here.

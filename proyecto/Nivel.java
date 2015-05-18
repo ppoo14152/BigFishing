@@ -8,10 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nivel extends Actor
 {
-    /**
-     * Act - do whatever the Nivel wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private GreenfootImage niv;
+    
+    public Nivel(String s)
+    {
+        niv = new GreenfootImage(s);
+        setImage(niv);
+    }
+    
     public void act() 
     {
         // Add your action code here.
