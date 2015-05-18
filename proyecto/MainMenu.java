@@ -26,8 +26,6 @@ public class MainMenu extends ScrollWorld
     public MainMenu()
     {
         super(800, 600, 1, 800, 1200);
-        mfondo = new GreenfootSound("gf.mp3");
-        mfondo.setVolume(mfondo.getVolume()-50);
         botones = true;
         existen = false;
         ballenaA = new ImagenC("creditos/b1.png",250);
@@ -53,10 +51,6 @@ public class MainMenu extends ScrollWorld
     }
     
     public void act(){
-        if(!mfondo.isPlaying()){
-           // mfondo.play();
-        }
-        
         if(jugar.getTouch()){
           
                 Greenfoot.setWorld(new Rio());
