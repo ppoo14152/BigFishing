@@ -1,18 +1,16 @@
 import greenfoot.*;
 
 /**
- * Write a description of class PezLargo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Crea un pez largo
+ * @version 1
  */
 public class PezLargo extends Pez
 {
     private GreenfootImage img;
     private boolean direccion, anclado;
+   
     /**
-     * Act - do whatever the PezLargo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea un pez largo en una zona del mundo
      */
     public PezLargo(){
         super(1+Greenfoot.getRandomNumber(4),5,3,13, 10+Greenfoot.getRandomNumber(4));
@@ -22,6 +20,10 @@ public class PezLargo extends Pez
         img.scale(img.getWidth()-10,img.getHeight()-10);
         this.setImage(img);
     }
+    
+     /**
+     * Mueve al pez
+     */
     public void act() 
     {
         super.act();

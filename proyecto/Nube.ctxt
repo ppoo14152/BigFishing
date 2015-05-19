@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.params=n\ v
 comment0.target=Nube(java.lang.String,\ int)
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Nube\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Crea\ una\ nube\ apartir\ de\ una\ imagen\r\n\ @param\ n\ Nombre\ de\ la\ imagen\r\n\ @param\ v\ velocidad\ de\ la\ nube\r\n
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment1.text=\r\n\ Mueve\ la\ nube.\r\n
+comment2.params=v
+comment2.target=void\ setVel(int)
+comment2.text=\r\n\ Cambia\ la\ velocidad\ de\ \ la\ nube\r\n\ @param\ v\ Velocidad\r\n
+numComments=3

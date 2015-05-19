@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Pez here.
+ * Son los enemigos del jugador, se mueven por el escenario.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 3
  */
 public abstract class Pez extends ScrollActor
 {
@@ -16,9 +15,14 @@ public abstract class Pez extends ScrollActor
     private int agresividad;
     private boolean direccion, anclado;
     private int valorC;
+
     /**
-     * Act - do whatever the Pez wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea un pez
+     * @param v velocidad
+     * @param r resistencia
+     * @param f fuerza
+     * @param a agresividad
+     * @param c valorC
      */
     public Pez(int v, int r, int f, int a, int c){
         valorC = c;
@@ -30,6 +34,9 @@ public abstract class Pez extends ScrollActor
         anclado = false;
     }
     
+    /**
+     * Mueve al pez
+     */
     public void act(){
         if(direccion){
             move(velocidad);
@@ -60,14 +67,26 @@ public abstract class Pez extends ScrollActor
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
     }
     
+    /**
+     * Regresa el valorC
+     * @return valorC
+     */
     public int valor(){
         return valorC;
     }
     
+    /**
+     * Cambia la dirección del pez
+     * @param dir direccion
+     */
     public void setDireccion(boolean dir){
         direccion =  dir;
     }
     
+    /**
+     * Regresa agresividad
+     * @return agresividad
+     */
     public int getAgresivo(){
         return agresividad;
     }

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FondoMarino here.
+ * Actor con la imagen del fondo marino
  * 
  * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class FondoMarino extends ScrollActor
 {

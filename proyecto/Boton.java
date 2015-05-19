@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Boton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Esta clase crea un botón el cual realiza acciones al ser presionado
+ *  
+ * @version 1.2
  */
 public class Boton extends Actor
 {
@@ -12,8 +11,10 @@ public class Boton extends Actor
     private boolean bandera, touch;
     private World wc;
     /**
-     * Act - do whatever the Boton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea un botón con dos estados
+     * @param A Estado pasivo del botón
+     * @param B Estado activo del botón
+     * @param scale reduce el tamaño del botón.
      */
     public Boton(String A, String B,boolean scale){
         iA = new GreenfootImage(A);
@@ -28,15 +29,25 @@ public class Boton extends Actor
         this.setImage(iB);
     }
     
+     /**
+     * Regresa el estado del botón
+     * @return touch
+     */
     public boolean getTouch(){
         return touch;
     }
     
+    /**
+     * Regresa el botón a su estado pasivo
+     */
     public void  setTouch(){
         touch = false;
         
     }
     
+    /**
+     * Cambia el estado del botón
+     */
     public void act() 
     {
         cambiaBoton();
@@ -48,6 +59,9 @@ public class Boton extends Actor
         }
     }    
     
+     /**
+     * Cambia la imagen del botón al ser presionado
+     */
         private void cambiaBoton(){
         if(Greenfoot.mouseMoved(this)){
             this.setImage(iA);

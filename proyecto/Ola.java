@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ola here.
+ * Esta clase anima el movimiento de las olas a través del mundo
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 2
  */
 public class Ola extends ScrollActor
 {
@@ -12,8 +11,9 @@ public class Ola extends ScrollActor
     private int velocidad;
     
     /**
-     * Act - do whatever the Ola wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea una Ola apartir de una imagen y le da una velocidad inicial
+     * @param img Nombre de la imagen
+     * @param v velocidad de la ola
      */
     public Ola(String img, int v){
         velocidad = v;
@@ -22,6 +22,10 @@ public class Ola extends ScrollActor
         this.setImage(background1);
    
     }
+    
+     /**
+     * Muve la ola.
+     */
     public void act() 
     {
        move(velocidad);

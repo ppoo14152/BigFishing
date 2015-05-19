@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Barco here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase que controla los barcos que aparecen en el menu del juego
+ *
+ * @version 1
  */
 public class Barco extends ScrollActor
 {
@@ -12,9 +11,9 @@ public class Barco extends ScrollActor
     private int grados;
     private boolean direccion, mov;
     private SimpleTimer tiempo;
+     
     /**
-     * Act - do whatever the Barco wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor de Barco
      */
     public Barco() 
     {
@@ -30,6 +29,9 @@ public class Barco extends ScrollActor
         this.setLocation(-120, 395);
     }
     
+    /**
+     * Se inicializa al presionar Act o Play. Mueve al barco
+     */
     public void act(){
         if(mov){
             this.setGlobalLocation(this.getGlobalX()+1,this.getY());
@@ -47,15 +49,26 @@ public class Barco extends ScrollActor
                
     }
     
+    /**
+     * Modifica los grados de la imagen
+     */
     private void movientoBarco(){
         this.setRotation(grados);
     }
+    
+    /**
+     * Cambia la dirección de la imagen
+     */
     private void modificaDireccion(){
         if(direccion)
             grados++;
         else 
             grados--;
     }
+    
+    /**
+     * Establece un limite para la dirección de la figura basandose en los grados
+     */
     private void modificaGrados(){
         if(grados == 17){
             direccion = false;
@@ -66,6 +79,10 @@ public class Barco extends ScrollActor
             }
         }      
     }
+    
+    /**
+     * Cuando el barco llega al fin del mundo, el método lo invierte horizontalmente.
+     */
     private void invierteBarco(){
         if(this.getGlobalX()>940){
             barco.mirrorHorizontally();

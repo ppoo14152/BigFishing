@@ -1,18 +1,19 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Nube here.
+ * Esta clase crea nubes que se mueven por el mundo
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class Nube extends ScrollActor
 {
     private GreenfootImage img;
     private int vel;
+   
     /**
-     * Act - do whatever the Nube wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea una nube apartir de una imagen
+     * @param n Nombre de la imagen
+     * @param v velocidad de la nube
      */
     public Nube(String n, int v){
         vel = v;
@@ -20,11 +21,23 @@ public class Nube extends ScrollActor
         this.setImage(n);
     }
     
+     /**
+     * Mueve la nube.
+     */
     public void act() 
     {
         move(vel);
         if(this.getGlobalX()>1200){
             this.setGlobalLocation(-250, 50+Greenfoot.getRandomNumber(200));
         }
-    }    
+    }
+    
+    /**
+     * Cambia la velocidad de  la nube
+     * @param v Velocidad
+     */
+    public void setVel(int v)
+    {
+        vel = v;
+    }
 }

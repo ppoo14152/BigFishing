@@ -1,21 +1,25 @@
 import greenfoot.*;
 import java.awt.Color;
 /**
- * Write a description of class Gas here.
+ * Barra de gasolina del barco
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class Gas extends StatBar
 {
-    /**
-     * Act - do whatever the Gas wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+   /**
+    * Crea la barra de Gasolina
+    * @param maximo cantidad máxima de gasolina
+    * @param actual nivel actual de gasolina
+    */
    public Gas(int maximo, int actual){
         super(new Color(75, 75, 75), 250, 20, Style.SMOOTH, maximo, actual);
         setSpeed(5);
     }
+    
+     /**
+     * Actualiza la barra
+     */
    public void act(){
         super.act();
    }

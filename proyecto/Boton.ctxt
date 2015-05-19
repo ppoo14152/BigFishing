@@ -1,13 +1,17 @@
 #BlueJ class context
 comment0.params=A\ B\ scale
 comment0.target=Boton(java.lang.String,\ java.lang.String,\ boolean)
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Boton\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Crea\ un\ bot\u00F3n\ con\ dos\ estados\r\n\ @param\ A\ Estado\ pasivo\ del\ bot\u00F3n\r\n\ @param\ B\ Estado\ activo\ del\ bot\u00F3n\r\n\ @param\ scale\ reduce\ el\ tama\u00F1o\ del\ bot\u00F3n.\r\n
 comment1.params=
 comment1.target=boolean\ getTouch()
+comment1.text=\r\n\ Regresa\ el\ estado\ del\ bot\u00F3n\r\n\ @return\ touch\r\n
 comment2.params=
 comment2.target=void\ setTouch()
+comment2.text=\r\n\ Regresa\ el\ bot\u00F3n\ a\ su\ estado\ pasivo\r\n
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ Cambia\ el\ estado\ del\ bot\u00F3n\r\n
 comment4.params=
 comment4.target=void\ cambiaBoton()
+comment4.text=\r\n\ Cambia\ la\ imagen\ del\ bot\u00F3n\ al\ ser\ presionado\r\n
 numComments=5

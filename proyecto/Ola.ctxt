@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=img\ v
 comment0.target=Ola(java.lang.String,\ int)
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Ola\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Crea\ una\ Ola\ apartir\ de\ una\ imagen\ y\ le\ da\ una\ velocidad\ inicial\r\n\ @param\ img\ Nombre\ de\ la\ imagen\r\n\ @param\ v\ velocidad\ de\ la\ ola\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Muve\ la\ ola.\r\n
 numComments=2

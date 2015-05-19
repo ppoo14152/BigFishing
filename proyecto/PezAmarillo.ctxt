@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PezAmarillo()
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ PezAmarillo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Crea\ un\ pez\ amarillo\ en\ una\ zona\ del\ mundo\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Mueve\ al\ pez\r\n
 numComments=2

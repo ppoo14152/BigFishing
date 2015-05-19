@@ -2,10 +2,10 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Write a description of class Dinero here.
+ * Convierte una cadena a imagen y la muestra en el mundo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jesús Alejandro 
+ * @version 1.2
  */
 public class TextoP extends Actor
 {
@@ -14,8 +14,8 @@ public class TextoP extends Actor
     private int tam;
     private String simbol;
     /**
-     * Act - do whatever the Dinero wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor de la clase TextoP.
+     * @param s Texto que se va a introducir
      */
     public TextoP(String s){
         simbol = s;
@@ -25,6 +25,11 @@ public class TextoP extends Actor
         this.setImage(img);
     }
 
+    /**
+     * Constructor de la clase TextoP
+     * @param s Texto que se va a introducir
+     * @param tamanio Tamaño de la fuente
+     */
     public TextoP(String s, int tamanio)
     {
         simbol = s;
@@ -34,6 +39,9 @@ public class TextoP extends Actor
         this.setImage(img);
     }
 
+    /**
+     * The act method is called by the greenfoot framework to give actors a chance to perform some action.
+     */
     public void act() 
     {
         if(cont != -1){
@@ -54,10 +62,18 @@ public class TextoP extends Actor
     }
     }  
 
+    /**
+     * Contador, se utiliza para mostrar numeros
+     * @param c número
+     */
     public void actualiza(int c){
         cont=c;
     }
     
+    /**
+     * Cambia el texto que se muestra
+     * @param t Cadena de texto nueva
+     */
     public void setTexto(String t)
     {
         simbol = t;

@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ballena here.
+ * Esta clase crea ballenas
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class Ballena extends Pez
 {
@@ -15,12 +14,20 @@ public class Ballena extends Pez
     private GreenfootImage img;
     private boolean direccion, anclado;
     private Actor anzuelo;
+    
+     /**
+     * Crea una ballena en una zona del mundo
+     */
     public Ballena(){
         super(1, 9, 8, 3,10+Greenfoot.getRandomNumber(10));
         img = new GreenfootImage("BallenaMinimalistap.png");
         img.scale(img.getWidth()+100, img.getHeight()+100);
         this.setImage(img);
     }
+    
+        /**
+     * Mueve a la ballena
+     */
     public void act(){
         super.act();
         if(getGlobalX() > 2500){

@@ -2,25 +2,32 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Write a description of class potencia here.
+ * Barra de potencia
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class Potencia extends StatBar
 {
     /**
-     * Act - do whatever the potencia wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea la barra de Potencia
+     * @param maximo cantidad máxima de potencia
+     * @param actual nivel actual de potencia
      */
     public Potencia(int maximo, int actual){
         super(new Color(255, 255, 0), 250, 20, Style.SMOOTH, maximo, actual);
         setSpeed(8);
     }
+    
+    /**
+     * Actualiza la barra
+     */
     public void act(){
         super.act();
     }
     
+    /**
+     * Modifica el color de la barra 
+     */
     public void updateColor()
     {
         if (getValue() <= getMax()/4)

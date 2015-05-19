@@ -1,24 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Banner here.
+ * Un banner es un objeto utilizado como fondo para las ventanas.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Josué 
+ * @version 1
+ * 
  */
 public class Banner extends Actor
 {
     /**
-     * Act - do whatever the Banner wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * constructor de la clase Banner
+     * @param name Nombre de la imagen.
      */
     public Banner (String name)
     {
         setImage(name);
     }
-   
-    public void act() 
-    {
-        // Add your action code here.
-    }    
 }

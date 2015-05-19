@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tienda here.
+ * La clase tienda se encarga de vender provisiones al jugador y se necesita tener 
+ * algo de dinero para entrar a ella
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class Tienda extends Actor
 {
@@ -36,6 +36,15 @@ public class Tienda extends Actor
     private Boton An6;
     private Boton v1, v2;
     private Boton e1, e2;
+    
+    /**
+     * Crea una tienda
+     * @param p Jugador
+     * @param a Anzuelo
+     * @param g Gas
+     * @param pp Potencia
+     * @param v Vida
+     */
     public Tienda(Jugador p, Anzuelo a, Gas g, Potencia pp, Vida v)
     {
         bVid = v;
@@ -70,7 +79,10 @@ public class Tienda extends Actor
         e2 = new Boton ("bEnergia.png", "bEnergia.png", false);
 
     }
-
+    
+    /**
+     *  Añade los objetos que conforman la tienda al mundo
+     */
     public void muestra()
     {
         touch = true;
@@ -96,6 +108,9 @@ public class Tienda extends Actor
 
     }
 
+    /**
+     * Muestra los objetos del submenu anzuelo de la tienda
+     */
     public void muestraAnz()
     {
         getWorld().addObject(fondo, 400, 300);
@@ -108,6 +123,9 @@ public class Tienda extends Actor
         banAnz = 1;
     }
 
+    /**
+     * Remueve la tienda
+     */
     public void remove()
     {
         if(banAnz == 1)
@@ -138,6 +156,9 @@ public class Tienda extends Actor
             }
     }
 
+    /**
+     * Remueve el submenu de anzuelos
+     */
     public void removeAnz()
     {
         //getWorld().removeObject(fondo);
@@ -150,6 +171,9 @@ public class Tienda extends Actor
         banAnz = 0;
     }
     
+    /**
+     * Muestra el submenu de provisiones
+     */
     public void muestraCom()
     {
         getWorld().addObject(fondo, 400, 300);
@@ -160,6 +184,9 @@ public class Tienda extends Actor
         banCom = 1;
     }
     
+    /**
+     * Remueve el submenu de provisiones
+     */
     public void removeCom()
     {
         getWorld().removeObject(v1);
@@ -169,6 +196,9 @@ public class Tienda extends Actor
         banCom = 0;
     }
 
+    /**
+     * Activa la tienda mediante botones
+     */
     public void act() 
     {
         if(gas.getTouch())

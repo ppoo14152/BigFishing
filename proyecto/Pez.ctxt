@@ -1,13 +1,17 @@
 #BlueJ class context
 comment0.params=v\ r\ f\ a\ c
 comment0.target=Pez(int,\ int,\ int,\ int,\ int)
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Pez\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Crea\ un\ pez\r\n\ @param\ v\ velocidad\r\n\ @param\ r\ resistencia\r\n\ @param\ f\ fuerza\r\n\ @param\ a\ agresividad\r\n\ @param\ c\ valorC\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Mueve\ al\ pez\r\n
 comment2.params=
 comment2.target=int\ valor()
+comment2.text=\r\n\ Regresa\ el\ valorC\r\n\ @return\ valorC\r\n
 comment3.params=dir
 comment3.target=void\ setDireccion(boolean)
+comment3.text=\r\n\ Cambia\ la\ direcci\u00F3n\ del\ pez\r\n\ @param\ dir\ direccion\r\n
 comment4.params=
 comment4.target=int\ getAgresivo()
+comment4.text=\r\n\ Regresa\ agresividad\r\n\ @return\ agresividad\r\n
 numComments=5

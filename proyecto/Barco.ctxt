@@ -1,15 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Barco()
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Barco\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Constructor\ de\ Barco\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Se\ inicializa\ al\ presionar\ Act\ o\ Play.\ Mueve\ al\ barco\r\n
 comment2.params=
 comment2.target=void\ movientoBarco()
+comment2.text=\r\n\ Modifica\ los\ grados\ de\ la\ imagen\r\n
 comment3.params=
 comment3.target=void\ modificaDireccion()
+comment3.text=\r\n\ Cambia\ la\ direcci\u00F3n\ de\ la\ imagen\r\n
 comment4.params=
 comment4.target=void\ modificaGrados()
+comment4.text=\r\n\ Establece\ un\ limite\ para\ la\ direcci\u00F3n\ de\ la\ figura\ basandose\ en\ los\ grados\r\n
 comment5.params=
 comment5.target=void\ invierteBarco()
+comment5.text=\r\n\ Cuando\ el\ barco\ llega\ al\ fin\ del\ mundo,\ el\ m\u00E9todo\ lo\ invierte\ horizontalmente.\r\n
 numComments=6

@@ -15,7 +15,7 @@ public class Rio extends ScrollWorld
     private Gas barG;
     private Jugador p1 = new Jugador("barcos/barcoMinimalistag.png");
     private Anzuelo anz = new Anzuelo("anzuelo1.png");
-    private Cuerda crda;
+    //private Cuerda crda;
     private Boton mochila;
     private Boton inventario;
     private List<Pez> peces = new ArrayList<Pez>();
@@ -78,7 +78,7 @@ public class Rio extends ScrollWorld
         addObject(barG, 130, 60);
         tiempo = new SimpleTimer();
         tiempoAnz = new SimpleTimer();
-        crda = new Cuerda(anz.PosX(),anz.PosT());
+        //crda = new Cuerda(anz.PosX(),anz.PosT());
         ti = new Tienda(p1, anz, barG, barP, barV);
         tiempo.mark();
         tiempoAnz.mark();
@@ -113,7 +113,7 @@ public class Rio extends ScrollWorld
     }
     
     public void act(){
-        crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
+        //crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
         
         if(inventario.getTouch())
         {
@@ -135,7 +135,6 @@ public class Rio extends ScrollWorld
             ti.remove();
             removeObject(ti);
             removeObject(ay);
-            //repaint();
         }
         
         selectorNivel();

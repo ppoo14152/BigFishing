@@ -1,19 +1,17 @@
 import greenfoot.*;
 
 /**
- * Write a description of class PezRojo here.
+ * Esta clase crea peces rojos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class PezRojo extends Pez
 {
     private GreenfootImage img;
     private boolean direccion;
-
+    
     /**
-     * Act - do whatever the PezRojo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea un pez rojo en una zona del mundo
      */
     public PezRojo(){
         super(1+Greenfoot.getRandomNumber(4),5,3,15, 0);
@@ -23,7 +21,10 @@ public class PezRojo extends Pez
         img.scale(img.getWidth()-210,img.getHeight()-120);
         this.setImage(img);
     }
-    
+   
+     /**
+     * Mueve al pez
+     */
     public void act() 
     {
         super.act();

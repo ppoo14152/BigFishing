@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class BarcoG here.
+ * Barco del menu principal
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class BarcoG extends ScrollActor
 {
@@ -12,8 +11,7 @@ public class BarcoG extends ScrollActor
      private SimpleTimer tiempo;
     
     /**
-     * Act - do whatever the BarcoG wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor de BarcoG
      */
     public BarcoG(){
         barco = new GreenfootImage("barcos/barcoMinimalistag.png");
@@ -22,6 +20,10 @@ public class BarcoG extends ScrollActor
         tiempo.mark();
         
     }
+    
+        /**
+     * Mueve el barco por el mundo.
+     */
     public void act() 
     {
         if(tiempo.millisElapsed() > 15){

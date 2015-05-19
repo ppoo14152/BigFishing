@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class PezAmarillo here.
+ * Esta clase crea peces amarillos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class PezAmarillo extends Pez
 {
@@ -13,8 +12,7 @@ public class PezAmarillo extends Pez
     private boolean direccion, anclado;
     private Actor anzuelo;
     /**
-     * Act - do whatever the PezAmarillo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea un pez amarillo en una zona del mundo
      */
     public PezAmarillo(){
         super(1+Greenfoot.getRandomNumber(3),2,2,2,1+Greenfoot.getRandomNumber(3));
@@ -26,6 +24,9 @@ public class PezAmarillo extends Pez
         this.setImage(img);
     }
     
+    /**
+     * Mueve al pez
+     */
     public void act(){
         super.act();
         if(getGlobalX() > 800){

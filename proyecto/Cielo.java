@@ -2,10 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 
 /**
- * Write a description of class Cielo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Esta clase crea el fondo de los niveles y simula el paso del día y la noche en el juego.
+ *  
+ * @version 1
  */
 public class Cielo extends ScrollActor
 {
@@ -15,9 +14,13 @@ public class Cielo extends ScrollActor
     private boolean dia;
     private GreenfootImage sky = new GreenfootImage(800,400);
     private SimpleTimer timer = new SimpleTimer();
-    /**
-     * Act - do whatever the Cielo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+   
+     /**
+     * Crea un objeto Cielo y lo dibuja segun los colores de la paleta RGB
+     * @param r Red
+     * @param g Green
+     * @param b Blue
+     * 
      */
     public Cielo(int red, int green, int blue)
     {
@@ -33,6 +36,9 @@ public class Cielo extends ScrollActor
         timer.mark();
     }
     
+    /**
+     * Cambia el color del cielo, segun el tiempo, utiliza la clase SimpleTimer
+     */
     public void act()
     {
         if(timer.millisElapsed()>1020)
@@ -59,11 +65,15 @@ public class Cielo extends ScrollActor
                 }
             }
             cambiaColor(c ,v);
-            //System.out.println("g: " + c + " b: " + v);
             timer.mark();
         }
     }
     
+     /**
+     * Cambia el color del cielo, modificando los valores RGB
+     * @param tiempo Contador que resta al valor Green del modelo de color RGB
+     * @param v Contador que resta al valor Blue del modelo de color RGB
+     */
     private void cambiaColor(int tiempo, int v)
     {
         sky.setColor(new Color(r,g - tiempo,b - v));
@@ -71,6 +81,10 @@ public class Cielo extends ScrollActor
         setImage(sky);
     }
     
+     /**
+     * Incrementa el valor de los contadores
+     * @param valor Determina cual de los dos contadores se va a incrementar
+     */
     private void incCont(int valor)
     {
         if(valor == 1)
@@ -83,6 +97,10 @@ public class Cielo extends ScrollActor
         }
     }
     
+     /**
+     * Decrementa el valor de los contadores
+     * @param valor Determina cual de los dos contadores se va a decrementar
+     */
     private void decCont(int valor)
     {
         if(valor == 1)
@@ -95,6 +113,10 @@ public class Cielo extends ScrollActor
         }
     }
     
+     /**
+     * Determina si es día o noche
+     * @return dia
+     */
     public boolean getDia()
     {
         return dia;

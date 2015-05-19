@@ -1,15 +1,20 @@
 #BlueJ class context
 comment0.params=red\ green\ blue
 comment0.target=Cielo(int,\ int,\ int)
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ Cielo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Crea\ un\ objeto\ Cielo\ y\ lo\ dibuja\ segun\ los\ colores\ de\ la\ paleta\ RGB\r\n\ @param\ r\ Red\r\n\ @param\ g\ Green\r\n\ @param\ b\ Blue\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Cambia\ el\ color\ del\ cielo,\ segun\ el\ tiempo,\ utiliza\ la\ clase\ SimpleTimer\r\n
 comment2.params=tiempo\ v
 comment2.target=void\ cambiaColor(int,\ int)
+comment2.text=\r\n\ Cambia\ el\ color\ del\ cielo,\ modificando\ los\ valores\ RGB\r\n\ @param\ tiempo\ Contador\ que\ resta\ al\ valor\ Green\ del\ modelo\ de\ color\ RGB\r\n\ @param\ v\ Contador\ que\ resta\ al\ valor\ Blue\ del\ modelo\ de\ color\ RGB\r\n
 comment3.params=valor
 comment3.target=void\ incCont(int)
+comment3.text=\r\n\ Incrementa\ el\ valor\ de\ los\ contadores\r\n\ @param\ valor\ Determina\ cual\ de\ los\ dos\ contadores\ se\ va\ a\ incrementar\r\n
 comment4.params=valor
 comment4.target=void\ decCont(int)
+comment4.text=\r\n\ Decrementa\ el\ valor\ de\ los\ contadores\r\n\ @param\ valor\ Determina\ cual\ de\ los\ dos\ contadores\ se\ va\ a\ decrementar\r\n
 comment5.params=
 comment5.target=boolean\ getDia()
+comment5.text=\r\n\ Determina\ si\ es\ d\u00EDa\ o\ noche\r\n\ @return\ dia\r\n
 numComments=6

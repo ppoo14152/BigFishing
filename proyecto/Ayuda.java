@@ -1,22 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ayuda here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Ayuda del juego
+ *  
+ * @version 1
  */
 public class Ayuda extends Actor
 {
     private GreenfootImage texto;
     
+    /**
+     * Constructor de Ayuda, añade una imagen al Actor
+     */
     public Ayuda()
     {
         texto = new GreenfootImage("ayuda.png");
         setImage(texto);
-    }
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    }   
 }
