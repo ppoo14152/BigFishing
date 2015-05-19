@@ -40,4 +40,14 @@ public class Nube extends ScrollActor
     {
         vel = v;
     }
+    
+    /**
+     * Cambia la imagen de la nube
+     * @param m Imagen de la nube
+     */
+    
+    public void setImagen(String m){
+        img = new GreenfootImage(m);
+        this.setImage(m);
+    }
 }

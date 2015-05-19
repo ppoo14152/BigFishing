@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PezEspada()
-comment0.text=\r\n\ Crea\ un\ pez\ espada\ en\ una\ zona\ del\ mundo\r\n
+comment0.text=\n\ Crea\ un\ pez\ espada\ en\ una\ zona\ del\ mundo\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Mueve\ al\ pez\r\n
+comment1.text=\n\ Mueve\ al\ pez\n
 numComments=2

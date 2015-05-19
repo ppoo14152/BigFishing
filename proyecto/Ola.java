@@ -33,4 +33,23 @@ public class Ola extends ScrollActor
             this.setLocation(0, this.getY());
        }
     }    
+    
+    /**
+     * Cambia la imagen de la clase
+     * @param img Nombre de la imagen
+     */
+    public void setImagen(String img){
+        background1 = new GreenfootImage(img);
+        background1.setTransparency(255);
+        this.setImage(background1);
+        
+    }
+    
+    /**
+     * Cambia la velocidad de la ola
+     * @param v Velocidad
+     */
+    public void setVelocidad(int v){
+        velocidad = v;
+    }
 }

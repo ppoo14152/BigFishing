@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=maximo\ actual
 comment0.target=Gas(int,\ int)
-comment0.text=\r\n\ Crea\ la\ barra\ de\ Gasolina\r\n\ @param\ maximo\ cantidad\ m\u00E1xima\ de\ gasolina\r\n\ @param\ actual\ nivel\ actual\ de\ gasolina\r\n
+comment0.text=\n\ Crea\ la\ barra\ de\ Gasolina\n\ @param\ maximo\ cantidad\ m\u00E1xima\ de\ gasolina\n\ @param\ actual\ nivel\ actual\ de\ gasolina\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Actualiza\ la\ barra\r\n
+comment1.text=\n\ Actualiza\ la\ barra\n
 numComments=2

@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class Rio extends ScrollWorld
 {
+    private Nube na, nb, nc;
+    private Ola olaF, olaT;
     private int auxA, auxB, nivel;
     private Vida barV;
     private Potencia barP;
@@ -37,7 +39,7 @@ public class Rio extends ScrollWorld
     {
         super(800, 600, 1, 800, 2000);
         pinta = true;
-        nivel = 1;
+        nivel = 3;
         auxA = auxB = 0;
         dinero = new TextoP("$");
         npeces = new TextoP("P");
@@ -54,13 +56,18 @@ public class Rio extends ScrollWorld
         addObject(new Ballena(),0,1000);
         addObject(new Ballena(),0,1600);
         addObject(new Cielo(0, 255, 255), 400, 200);
-        addObject(new Nube("nubes/nube1dia.png",1),10, 35);
-        addObject(new Nube("nubes/nube1dia.png",2),25, 50);
-        addObject(new Nube("nubes/nube1dia.png",2),78, 100);
-        addObject(new Ola("Olas/olaRioA.png", 2), 0, 370);
+        na = new Nube("nubes/nube1dia.png",1);
+        nb = new Nube("nubes/nube1dia.png",2);
+        nc = new Nube("nubes/nube1dia.png",2);
+        addObject(na, 10, 35);
+        addObject(nb,25, 50);
+        addObject(nc,78, 100);
+        olaT = new Ola("Olas/olaRioA.png",2);
+        addObject(olaT, 0, 370);
         addObject(p1,300 ,300);
         addCameraFollower(anz, -200, 90);
-        addObject(new Ola("Olas/olaRioF.png", 1), 0, 400);
+        olaF = new Ola("Olas/olaRioF.png", 1);
+        addObject(olaF, 0, 400);
         addObject(new FondoMarino(),400,1900);
         addObject(new Ballena(),0,1000);
         addObject(new Ballena(),0,1600);
@@ -90,6 +97,13 @@ public class Rio extends ScrollWorld
         int numTem = 4+Greenfoot.getRandomNumber(10);
         for(int i=0; i<numTem; i++){
             addObject(new PezAmarillo(), Greenfoot.getRandomNumber(750), 500+Greenfoot.getRandomNumber(550));
+        }
+    }
+    
+    private void iniciaPecesGlobo(){
+        int numTem = 2+Greenfoot.getRandomNumber(3);
+        for(int i=0; i<numTem; i++){
+            addObject(new PezGlobo(), Greenfoot.getRandomNumber(750), 600+Greenfoot.getRandomNumber(550));
         }
     }
     
@@ -237,7 +251,15 @@ public class Rio extends ScrollWorld
             p1.setPeces(0);
         }
         
-        if(tiempo.millisElapsed()>110000){
+        if(nivel == 2 ){
+            pinta = true;
+            refres = true;
+            removeObject(level);
+            nivel = 3;
+            p1.setPeces(0);
+        }
+        
+        if(tiempo.millisElapsed()>100000){
             refres = true;
             tiempo.mark();
         }
@@ -256,7 +278,6 @@ public class Rio extends ScrollWorld
                     iniciaPecesAmarillos();
                     iniciaPecesAzules();
                     iniciaPecesMorados();
-                    iniciaPecesRojos();
                     refres = false;
                 }
             break;
@@ -264,6 +285,9 @@ public class Rio extends ScrollWorld
                 if(pinta == true){
                     level = new Nivel("Nivel2.png");
                     addObject(level, 400, 60);
+                    cambiaColorAgua(1);
+                    olaT.setImagen("Olas/ola4p.png");
+                    olaF.setImagen("Olas/olaMar.png");
                     pinta = false;
                 }
                 
@@ -271,7 +295,38 @@ public class Rio extends ScrollWorld
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
                     iniciaPecesAzules();
+                    iniciaPecesAzules();
                     iniciaPecesMorados();
+                    iniciaPecesGlobo();
+                    iniciaPecesRojos();
+                    refres = false;
+                }
+            break;
+            case 3:
+                if(pinta == true){
+                    level = new Nivel("Nivel3.png");
+                    addObject(level, 400, 60);
+                    cambiaColorAgua(0);
+                    olaT.setImagen("Olas/olaRioA.png");
+                    olaT.setVelocidad(6);
+                    olaF.setImagen("Olas/olaRioF.png");
+                    olaF.setVelocidad(3);
+                    na.setImagen("nube1nublado.png");
+                    na.setVel(4);
+                    nb.setImagen("nube1nublado.png");
+                    nb.setVel(3);
+                    nc.setImagen("nube1nublado.png");
+                    nc.setVel(4);
+                    pinta = false;
+                }
+                
+                if(refres){
+                    peces = this.getObjects(Pez.class);
+                    this.removeObjects(peces);
+                    iniciaPecesAzules();
+                    iniciaPecesAzules();
+                    iniciaPecesMorados();
+                    iniciaPecesGlobo();
                     iniciaPecesRojos();
                     refres = false;
                 }

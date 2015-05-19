@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.params=v\ r\ f\ a\ c
 comment0.target=Pez(int,\ int,\ int,\ int,\ int)
-comment0.text=\r\n\ Crea\ un\ pez\r\n\ @param\ v\ velocidad\r\n\ @param\ r\ resistencia\r\n\ @param\ f\ fuerza\r\n\ @param\ a\ agresividad\r\n\ @param\ c\ valorC\r\n
+comment0.text=\n\ Crea\ un\ pez\n\ @param\ v\ velocidad\n\ @param\ r\ resistencia\n\ @param\ f\ fuerza\n\ @param\ a\ agresividad\n\ @param\ c\ valorC\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Mueve\ al\ pez\r\n
+comment1.text=\n\ Mueve\ al\ pez\n
 comment2.params=
 comment2.target=int\ valor()
-comment2.text=\r\n\ Regresa\ el\ valorC\r\n\ @return\ valorC\r\n
+comment2.text=\n\ Regresa\ el\ valorC\n\ @return\ valorC\n
 comment3.params=dir
 comment3.target=void\ setDireccion(boolean)
-comment3.text=\r\n\ Cambia\ la\ direcci\u00F3n\ del\ pez\r\n\ @param\ dir\ direccion\r\n
+comment3.text=\n\ Cambia\ la\ direcci\u00F3n\ del\ pez\n\ @param\ dir\ direccion\n
 comment4.params=
 comment4.target=int\ getAgresivo()
-comment4.text=\r\n\ Regresa\ agresividad\r\n\ @return\ agresividad\r\n
+comment4.text=\n\ Regresa\ agresividad\n\ @return\ agresividad\n
 numComments=5

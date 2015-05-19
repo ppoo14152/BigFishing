@@ -18,7 +18,7 @@ public class PezGlobo extends Pez
         direccion = true;
         img = new GreenfootImage("Pez6.png");
         img.mirrorHorizontally();
-        img.scale(img.getWidth()-35,img.getHeight()-35);
+        img.scale(img.getWidth()-60,img.getHeight()-60);
         this.setImage(img);
     }
     
@@ -28,12 +28,12 @@ public class PezGlobo extends Pez
     public void act() 
     {
         super.act();
-        if(getGlobalX() > 650){
+        if(getGlobalX() > 1200){
             direccion = false;
             super.setDireccion(direccion);
             img.mirrorHorizontally();
         }
-        if(getGlobalX() < -650){
+        if(getGlobalX() < -1200){
             direccion = true;
             super.setDireccion(direccion);
             img.mirrorHorizontally();

@@ -1,11 +1,14 @@
 #BlueJ class context
 comment0.params=n\ v
 comment0.target=Nube(java.lang.String,\ int)
-comment0.text=\r\n\ Crea\ una\ nube\ apartir\ de\ una\ imagen\r\n\ @param\ n\ Nombre\ de\ la\ imagen\r\n\ @param\ v\ velocidad\ de\ la\ nube\r\n
+comment0.text=\n\ Crea\ una\ nube\ apartir\ de\ una\ imagen\n\ @param\ n\ Nombre\ de\ la\ imagen\n\ @param\ v\ velocidad\ de\ la\ nube\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Mueve\ la\ nube.\r\n
+comment1.text=\n\ Mueve\ la\ nube.\n
 comment2.params=v
 comment2.target=void\ setVel(int)
-comment2.text=\r\n\ Cambia\ la\ velocidad\ de\ \ la\ nube\r\n\ @param\ v\ Velocidad\r\n
-numComments=3
+comment2.text=\n\ Cambia\ la\ velocidad\ de\ \ la\ nube\n\ @param\ v\ Velocidad\n
+comment3.params=m
+comment3.target=void\ setImagen(java.lang.String)
+comment3.text=\n\ Cambia\ la\ imagen\ de\ la\ nube\n\ @param\ m\ Imagen\ de\ la\ nube\n
+numComments=4

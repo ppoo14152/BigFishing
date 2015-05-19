@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.params=s
 comment0.target=TextoP(java.lang.String)
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ TextoP.\r\n\ @param\ s\ Texto\ que\ se\ va\ a\ introducir\r\n
+comment0.text=\n\ Constructor\ de\ la\ clase\ TextoP.\n\ @param\ s\ Texto\ que\ se\ va\ a\ introducir\n
 comment1.params=s\ tamanio
 comment1.target=TextoP(java.lang.String,\ int)
-comment1.text=\r\n\ Constructor\ de\ la\ clase\ TextoP\r\n\ @param\ s\ Texto\ que\ se\ va\ a\ introducir\r\n\ @param\ tamanio\ Tama\u00F1o\ de\ la\ fuente\r\n
+comment1.text=\n\ Constructor\ de\ la\ clase\ TextoP\n\ @param\ s\ Texto\ que\ se\ va\ a\ introducir\n\ @param\ tamanio\ Tama\u00F1o\ de\ la\ fuente\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ The\ act\ method\ is\ called\ by\ the\ greenfoot\ framework\ to\ give\ actors\ a\ chance\ to\ perform\ some\ action.\r\n
+comment2.text=\n\ The\ act\ method\ is\ called\ by\ the\ greenfoot\ framework\ to\ give\ actors\ a\ chance\ to\ perform\ some\ action.\n
 comment3.params=c
 comment3.target=void\ actualiza(int)
-comment3.text=\r\n\ Contador,\ se\ utiliza\ para\ mostrar\ numeros\r\n\ @param\ c\ n\u00FAmero\r\n
+comment3.text=\n\ Contador,\ se\ utiliza\ para\ mostrar\ numeros\n\ @param\ c\ n\u00FAmero\n
 comment4.params=t
 comment4.target=void\ setTexto(java.lang.String)
-comment4.text=\r\n\ Cambia\ el\ texto\ que\ se\ muestra\r\n\ @param\ t\ Cadena\ de\ texto\ nueva\r\n
+comment4.text=\n\ Cambia\ el\ texto\ que\ se\ muestra\n\ @param\ t\ Cadena\ de\ texto\ nueva\n
 numComments=5

@@ -1,8 +1,14 @@
 #BlueJ class context
 comment0.params=img\ v
 comment0.target=Ola(java.lang.String,\ int)
-comment0.text=\r\n\ Crea\ una\ Ola\ apartir\ de\ una\ imagen\ y\ le\ da\ una\ velocidad\ inicial\r\n\ @param\ img\ Nombre\ de\ la\ imagen\r\n\ @param\ v\ velocidad\ de\ la\ ola\r\n
+comment0.text=\n\ Crea\ una\ Ola\ apartir\ de\ una\ imagen\ y\ le\ da\ una\ velocidad\ inicial\n\ @param\ img\ Nombre\ de\ la\ imagen\n\ @param\ v\ velocidad\ de\ la\ ola\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Muve\ la\ ola.\r\n
-numComments=2
+comment1.text=\n\ Muve\ la\ ola.\n
+comment2.params=img
+comment2.target=void\ setImagen(java.lang.String)
+comment2.text=\n\ Cambia\ la\ imagen\ de\ la\ clase\n\ @param\ img\ Nombre\ de\ la\ imagen\n
+comment3.params=v
+comment3.target=void\ setVelocidad(int)
+comment3.text=\n\ Cambia\ la\ velocidad\ de\ la\ ola\n\ @param\ v\ Velocidad\n
+numComments=4

@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=maximo\ actual
 comment0.target=Vida(int,\ int)
-comment0.text=\r\n\ Crea\ la\ barra\ de\ vida\r\n\ @param\ maximo\ cantidad\ m\u00E1xima\ de\ vida\r\n\ @param\ actual\ nivel\ actual\ de\ vida\r\n
+comment0.text=\n\ Crea\ la\ barra\ de\ vida\n\ @param\ maximo\ cantidad\ m\u00E1xima\ de\ vida\n\ @param\ actual\ nivel\ actual\ de\ vida\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Actualiza\ la\ barra\r\n
+comment1.text=\n\ Actualiza\ la\ barra\n
 comment2.params=
 comment2.target=void\ updateColor()
-comment2.text=\r\n\ Modifica\ el\ color\ de\ la\ barra\r\n
+comment2.text=\n\ Modifica\ el\ color\ de\ la\ barra\n
 numComments=3

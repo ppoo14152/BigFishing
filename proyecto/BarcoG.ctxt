@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=BarcoG()
-comment0.text=\r\n\ Constructor\ de\ BarcoG\r\n
+comment0.text=\n\ Constructor\ de\ BarcoG\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Mueve\ el\ barco\ por\ el\ mundo.\r\n
+comment1.text=\n\ Mueve\ el\ barco\ por\ el\ mundo.\n
 numComments=2
