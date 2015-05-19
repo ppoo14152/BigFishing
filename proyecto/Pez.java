@@ -67,4 +67,8 @@ public abstract class Pez extends ScrollActor
     public void setDireccion(boolean dir){
         direccion =  dir;
     }
+    
+    public int getAgresivo(){
+        return agresividad;
+    }
 }

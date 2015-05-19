@@ -34,8 +34,7 @@ public class MainMenu extends ScrollWorld
         ballenaB = new ImagenC("creditos/b2.png",750);
         jugar = new Boton("botones/JugarB.png","botones/JugarA.png",true);
         cred = new Boton("botones/CreditosB.png","botones/CreditosA.png",true);
-        //Cambiar
-        record = new Boton("botones/CreditosA.png","botones/CreditosA.png",true);
+        record = new Boton("botones/RecordsB.png","botones/RecordsA.png",true);
         fondo = new GreenfootImage(800,600);
         fondo.setColor(new Color(33,161,254));
         fondo.fill();
@@ -72,6 +71,10 @@ public class MainMenu extends ScrollWorld
             this.addObject(sb, 400,300);
         }
         
+        if(Greenfoot.isKeyDown("escape")){
+            this.removeObject(sb);
+        }
+        
         if(tiempo.millisElapsed()>17500){
             botones = true;
         }
@@ -83,7 +86,7 @@ public class MainMenu extends ScrollWorld
             if(!existen){
                 this.addObject(jugar, 300, 300);
                 this.addObject(cred, 300, 370);
-                this.addObject(record, 300, 450);
+                this.addObject(record, 300, 430);
                 existen = true;
             }
         }else{

@@ -91,6 +91,13 @@ public class Rio extends ScrollWorld
         }
     }
     
+    private void iniciaPecesRojos(){
+        int numTem = 3+Greenfoot.getRandomNumber(3);
+        for(int i=0; i<numTem; i++){
+            addObject(new PezRojo(), Greenfoot.getRandomNumber(650), 700+Greenfoot.getRandomNumber(350));
+        }
+    }
+    
     private void iniciaPecesAzules(){
         int numTem = 3+Greenfoot.getRandomNumber(5);
         for(int i=0; i<numTem; i++){
@@ -104,6 +111,7 @@ public class Rio extends ScrollWorld
             addObject(new PezMorado(), Greenfoot.getRandomNumber(650), 1200+Greenfoot.getRandomNumber(450));
         }
     }
+    
     public void act(){
         crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
         
@@ -140,6 +148,7 @@ public class Rio extends ScrollWorld
             iniciaPecesAmarillos();
             iniciaPecesAzules();
             iniciaPecesMorados();
+            iniciaPecesRojos();
             refres = false;
         }
         dinero.actualiza(p1.getDinero());
@@ -154,6 +163,11 @@ public class Rio extends ScrollWorld
         p1.setPotencia(barP.getValue());
         p1.setGas(barG.getValue());
         
+        if(p1.getBajaV() == true){
+            barV.add(-10);
+            p1.setBajaV(false);
+        }
+            
         if(anz.getProfundidad()!=0){
             barP.setSpeed(8);
             barP.add(-1);
@@ -195,8 +209,13 @@ public class Rio extends ScrollWorld
         
         if(barV.getValue() == 0)
         {
+            int A = 1;
             r.fin();
-            addObject(sb,400, 300);
+            //addObject(sb,400, 300);
+            do{
+                A++;
+            }while(A%150 != 0);
+            Greenfoot.setWorld(new MainMenu());
         }
     }
 }

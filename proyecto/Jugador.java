@@ -11,12 +11,10 @@ import java.util.ArrayList;
 public class Jugador extends ScrollActor
 {
     private GreenfootImage ju;
-    private boolean aux;
-    private Actor pez,anzuelo;
+    private boolean aux, bajaV;
+    private Actor pez,anzuelo, bar;
     private int nPeces;
-    
     private int EnergiaMax;
-    
     private int energia;
     private int vida;
     private int dinero;
@@ -25,6 +23,7 @@ public class Jugador extends ScrollActor
     //private List<ScrollActor> l;
     public Jugador(String n)
     {
+        bajaV = false;
         nPeces = 0;
         dinero = 20;
         ju = new GreenfootImage(n);
@@ -42,6 +41,9 @@ public class Jugador extends ScrollActor
         anzuelo = this.getOneIntersectingObject(Anzuelo.class);
         if(pez != null){
             dinero+=((Pez)pez).valor();
+            if(((Pez)pez).getAgresivo()>10){
+                bajaV = true;
+            }
             getWorld().removeObject(pez);
             nPeces++;
             if(anzuelo != null){
@@ -63,6 +65,14 @@ public class Jugador extends ScrollActor
             setLocation(getX() + 3, getY());
         }
      }
+     
+     public boolean getBajaV(){
+         return bajaV;
+     }
+     
+     public void setBajaV(boolean v){
+         bajaV = v;
+     }    
      
      public boolean getBajoAgua(){
          return aux;
