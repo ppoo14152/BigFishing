@@ -58,7 +58,7 @@ public class MainMenu extends ScrollWorld
     public void act(){
         if(jugar.getTouch()){
           
-                Greenfoot.setWorld(new Rio());
+                Greenfoot.setWorld(new Escenario());
         }
         
         if(cred.getTouch()){

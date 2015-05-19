@@ -27,8 +27,8 @@ public class Jugador extends ScrollActor
     public Jugador(String n)
     {
         bajaV = false;
-        nPeces = 25;
-        dinero = 20;
+        nPeces = 0;
+        dinero = 25;
         ju = new GreenfootImage(n);
         this.setImage(ju);
         aux = false;

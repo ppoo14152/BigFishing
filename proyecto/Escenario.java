@@ -6,7 +6,7 @@ import java.util.List;
  *  
  * @version 2
  */
-public class Rio extends ScrollWorld
+public class Escenario extends ScrollWorld
 {
     private Nube na, nb, nc;
     private Ola olaF, olaT;
@@ -35,11 +35,11 @@ public class Rio extends ScrollWorld
      * Constructor for objects of class Rio.
      * 
      */
-    public Rio()
+    public Escenario()
     {
         super(800, 600, 1, 800, 2000);
         pinta = true;
-        nivel = 3;
+        nivel = 1;
         auxA = auxB = 0;
         dinero = new TextoP("$");
         npeces = new TextoP("P");
@@ -105,6 +105,17 @@ public class Rio extends ScrollWorld
         for(int i=0; i<numTem; i++){
             addObject(new PezGlobo(), Greenfoot.getRandomNumber(750), 600+Greenfoot.getRandomNumber(550));
         }
+    }
+    
+    private void iniciaPezLargo(){
+        int numTem = 4+Greenfoot.getRandomNumber(4);
+        for(int i=0; i<numTem; i++){
+            addObject(new PezLargo(), Greenfoot.getRandomNumber(750), 600+Greenfoot.getRandomNumber(550));
+        }
+    }
+    
+    private void iniciaPezEspada(){
+        addObject(new PezEspada(), Greenfoot.getRandomNumber(750), 650+Greenfoot.getRandomNumber(650));
     }
     
     /**
@@ -251,12 +262,31 @@ public class Rio extends ScrollWorld
             p1.setPeces(0);
         }
         
-        if(nivel == 2 ){
+        if(nivel == 2 &&  p1.getNPeces() > 5){
             pinta = true;
             refres = true;
             removeObject(level);
             nivel = 3;
             p1.setPeces(0);
+        }
+        
+        if(nivel == 3 && p1.getNPeces() > 26){
+            pinta = true;
+            refres = true;
+            removeObject(level);
+            nivel = 4;
+            p1.setPeces(0);
+        }
+        
+        if(nivel == 4 && p1.getNPeces() > 15*4){
+            pinta = true;
+            refres = true;
+            removeObject(level);
+            nivel = 5;
+            p1.setPeces(0);
+        }
+        
+        if(nivel == 5 && p1.getNPeces() > 2){
         }
         
         if(tiempo.millisElapsed()>100000){
@@ -294,10 +324,6 @@ public class Rio extends ScrollWorld
                 if(refres){
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
-                    iniciaPecesAzules();
-                    iniciaPecesAzules();
-                    iniciaPecesMorados();
-                    iniciaPecesGlobo();
                     iniciaPecesRojos();
                     refres = false;
                 }
@@ -323,11 +349,53 @@ public class Rio extends ScrollWorld
                 if(refres){
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
+                    iniciaPecesGlobo();
+                    iniciaPecesRojos();
+                    refres = false;
+                }
+            break;
+            case 4:
+                if(pinta == true){
+                    level = new Nivel("Nivel4.png");
+                    addObject(level, 400, 60);
+                    cambiaColorAgua(1);
+                    olaT.setImagen("Olas/ola4p.png");
+                    olaT.setVelocidad(2);
+                    olaF.setImagen("Olas/olaMar.png");
+                    olaF.setVelocidad(1);
+                    na.setImagen("nube1dia.png");
+                    na.setVel(2);
+                    nb.setImagen("nube1dia.png");
+                    nb.setVel(2);
+                    nc.setImagen("nube1dia.png");
+                    nc.setVel(1);
+                    pinta = false;
+                }
+                
+                if(refres){
+                    peces = this.getObjects(Pez.class);
+                    this.removeObjects(peces);
                     iniciaPecesAzules();
-                    iniciaPecesAzules();
+                    iniciaPezLargo();
                     iniciaPecesMorados();
                     iniciaPecesGlobo();
                     iniciaPecesRojos();
+                    refres = false;
+                }
+            break;
+            case 5:
+                if(pinta == true){
+                    level = new Nivel("Nivel5.png");
+                    addObject(level, 400, 60);
+                    pinta = false;
+                }
+                
+                if(refres){
+                    peces = this.getObjects(Pez.class);
+                    this.removeObjects(peces);
+                    iniciaPezEspada();
+                    iniciaPezEspada();
+                    iniciaPezEspada();
                     refres = false;
                 }
         }  
