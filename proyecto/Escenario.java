@@ -349,8 +349,8 @@ public class Escenario extends ScrollWorld
                 if(refres){
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
-                    iniciaPecesGlobo();
-                    iniciaPecesRojos();
+                    iniciaPecesMorados();
+                    iniciaPecesMorados();
                     refres = false;
                 }
             break;
