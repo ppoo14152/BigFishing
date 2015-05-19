@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Rio extends ScrollWorld
 {
-    private int auxA, auxB;
+    private int auxA, auxB, nivel;
     private Vida barV;
     private Potencia barP;
     private Gas barG;
@@ -19,7 +19,7 @@ public class Rio extends ScrollWorld
     private Boton mochila;
     private Boton inventario;
     private List<Pez> peces = new ArrayList<Pez>();
-    private boolean refres;
+    private boolean refres, pinta;
     private SimpleTimer tiempo;
     private SimpleTimer tiempoAnz;
     private TextoP dinero;
@@ -37,10 +37,11 @@ public class Rio extends ScrollWorld
     public Rio()
     {
         super(800, 600, 1, 800, 2000);
+        pinta = true;
+        nivel = 1;
         auxA = auxB = 0;
         dinero = new TextoP("$");
         npeces = new TextoP("P");
-        level = new Nivel("Nivel1.png");
         sb = new ScoreBoard(500,400);
         ti = new Tienda(p1, anz, barG, barP, barV);
         ay = new Ayuda();
@@ -75,7 +76,6 @@ public class Rio extends ScrollWorld
         addObject(barV, 130, 20);
         addObject(barP, 130, 40);
         addObject(barG, 130, 60);
-        addObject(level, 400, 60);
         tiempo = new SimpleTimer();
         tiempoAnz = new SimpleTimer();
         crda = new Cuerda(anz.PosX(),anz.PosT());
@@ -138,26 +138,15 @@ public class Rio extends ScrollWorld
             //repaint();
         }
         
-        if(tiempo.millisElapsed()>120000){
-            refres = true;
-            tiempo.mark();
-        }
-        if(refres){
-            peces = this.getObjects(Pez.class);
-            this.removeObjects(peces);
-            iniciaPecesAmarillos();
-            iniciaPecesAzules();
-            iniciaPecesMorados();
-            iniciaPecesRojos();
-            refres = false;
-        }
+        selectorNivel();
+        
         dinero.actualiza(p1.getDinero());
         npeces.actualiza(p1.getNPeces());
         
         actBar();
     }
     
-    public void actBar(){
+    private void actBar(){
         
         p1.setVida(barV.getValue());
         p1.setPotencia(barP.getValue());
@@ -217,5 +206,56 @@ public class Rio extends ScrollWorld
             }while(A%150 != 0);
             Greenfoot.setWorld(new MainMenu());
         }
+    }
+    
+    private void selectorNivel(){
+        
+        if(nivel == 1 && p1.getNPeces() > 29 ){
+            pinta = true;
+            refres = true;
+            removeObject(level);
+            nivel = 2;
+            p1.setPeces(0);
+        }
+        
+        if(tiempo.millisElapsed()>110000){
+            refres = true;
+            tiempo.mark();
+        }
+        
+        switch(nivel){
+            case 1:
+                if(pinta == true){
+                    level = new Nivel("Nivel1.png");
+                    addObject(level, 400, 60);
+                    pinta = false;
+                }
+                
+                if(refres){
+                    peces = this.getObjects(Pez.class);
+                    this.removeObjects(peces);
+                    iniciaPecesAmarillos();
+                    iniciaPecesAzules();
+                    iniciaPecesMorados();
+                    iniciaPecesRojos();
+                    refres = false;
+                }
+            break;
+            case 2:
+                if(pinta == true){
+                    level = new Nivel("Nivel2.png");
+                    addObject(level, 400, 60);
+                    pinta = false;
+                }
+                
+                if(refres){
+                    peces = this.getObjects(Pez.class);
+                    this.removeObjects(peces);
+                    iniciaPecesAzules();
+                    iniciaPecesMorados();
+                    iniciaPecesRojos();
+                    refres = false;
+                }
+        }  
     }
 }

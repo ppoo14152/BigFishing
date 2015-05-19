@@ -66,6 +66,10 @@ public class Jugador extends ScrollActor
         }
      }
      
+     public void setPeces(int p){
+         nPeces = p;
+     }
+     
      public boolean getBajaV(){
          return bajaV;
      }
