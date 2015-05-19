@@ -2,10 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Write a description of class Rio here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase del mundo Rio
+ *  
+ * @version 2
  */
 public class Rio extends ScrollWorld
 {
@@ -84,6 +83,9 @@ public class Rio extends ScrollWorld
         tiempoAnz.mark();
     }
     
+    /**
+     * Añade peces amarillos al mundo
+     */
     private void iniciaPecesAmarillos(){
         int numTem = 4+Greenfoot.getRandomNumber(10);
         for(int i=0; i<numTem; i++){
@@ -91,13 +93,19 @@ public class Rio extends ScrollWorld
         }
     }
     
+    /**
+     * Añade peces rojos al mundo
+     */
     private void iniciaPecesRojos(){
         int numTem = 3+Greenfoot.getRandomNumber(3);
         for(int i=0; i<numTem; i++){
             addObject(new PezRojo(), Greenfoot.getRandomNumber(650), 700+Greenfoot.getRandomNumber(350));
         }
     }
-    
+
+     /**
+     * Añade peces azules al mundo
+     */
     private void iniciaPecesAzules(){
         int numTem = 3+Greenfoot.getRandomNumber(5);
         for(int i=0; i<numTem; i++){
@@ -105,6 +113,9 @@ public class Rio extends ScrollWorld
         }
     }
     
+     /**
+     * Añade peces morados al mundo
+     */
     private void iniciaPecesMorados(){
          int numTem = 3+Greenfoot.getRandomNumber(3);
             for(int i=0; i<numTem; i++){
@@ -112,6 +123,9 @@ public class Rio extends ScrollWorld
         }
     }
     
+    /**
+     * Inicia los botones del juego 
+     */
     public void act(){
         //crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
         
@@ -145,6 +159,9 @@ public class Rio extends ScrollWorld
         actBar();
     }
     
+    /**
+     * Modifica las barras de vida, potencia y gasolina del jugador dependiedo de us interacción con el mundo
+     */
     private void actBar(){
         
         p1.setVida(barV.getValue());
@@ -207,6 +224,9 @@ public class Rio extends ScrollWorld
         }
     }
     
+    /**
+     * Cambia el nivel del juego
+     */
     private void selectorNivel(){
         
         if(nivel == 1 && p1.getNPeces() > 29 ){

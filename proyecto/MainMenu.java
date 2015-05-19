@@ -2,10 +2,9 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Write a description of class MainMenu here.
+ * Menu inicial del juego, desde esta clase se inician los records y el juego 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @version 1
  */
 public class MainMenu extends ScrollWorld
 {
@@ -53,6 +52,9 @@ public class MainMenu extends ScrollWorld
         
     }
     
+    /**
+     * Inicia el movimiento y los eventos del menu
+     */
     public void act(){
         if(jugar.getTouch()){
           
@@ -80,7 +82,9 @@ public class MainMenu extends ScrollWorld
         }
         muestraBotones();   
     }
-    
+    /**
+     * Muestra los botones del juego
+     */
     public void muestraBotones(){
         if(botones){
             if(!existen){
