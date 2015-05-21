@@ -15,7 +15,7 @@ public class PezAmarillo extends Pez
      * Crea un pez amarillo en una zona del mundo
      */
     public PezAmarillo(){
-        super(1+Greenfoot.getRandomNumber(3),2,2,2,1+Greenfoot.getRandomNumber(3));
+        super(1+Greenfoot.getRandomNumber(3),2,2,1,1+Greenfoot.getRandomNumber(3));
         anclado = false;
         direccion = true;
         img = new GreenfootImage("Pez1.png");

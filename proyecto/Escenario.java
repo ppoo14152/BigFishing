@@ -152,13 +152,12 @@ public class Escenario extends ScrollWorld
      * Inicia los botones del juego 
      */
     public void act(){
-        //crda.setPos(anz.PosX(), anz.PosT(), anz.globalX(), anz.globalY());
         
         if(inventario.getTouch())
         {
-            if(p1.getDinero() > 10)
+            if(p1.getDinero() > 5)
             {
-                p1.restaDinero(10);
+                p1.restaDinero(5);
                 addObject(ti,400,300);
                 ti.muestra();
             }
@@ -179,7 +178,15 @@ public class Escenario extends ScrollWorld
         selectorNivel();
         
         dinero.actualiza(p1.getDinero());
-        npeces.actualiza(p1.getNPeces());
+        if(nivel == 1){
+            npeces.actualiza(p1.getNPeces());
+        }
+        if(nivel == 2){
+            npeces.actualiza(p1.getNPez(3));
+        }
+        if(nivel == 3){
+            npeces.actualiza(p1.getNPez(2));
+        }
         
         actBar();
     }
@@ -260,30 +267,33 @@ public class Escenario extends ScrollWorld
             removeObject(level);
             nivel = 2;
             p1.setPeces(0);
+            p1.resetNpeces();
         }
         
-        if(nivel == 2 &&  p1.getNPeces() > 5){
+        if(nivel == 2 &&  p1.getNPez(3) > 4){
             pinta = true;
             refres = true;
             removeObject(level);
             nivel = 3;
             p1.setPeces(0);
+            p1.resetNpeces();
         }
         
-        if(nivel == 3 && p1.getNPeces() > 26){
+        if(nivel == 3 && p1.getNPez(2) > 24){
             pinta = true;
             refres = true;
             removeObject(level);
             nivel = 4;
             p1.setPeces(0);
+            p1.resetNpeces();
         }
-        
-        if(nivel == 4 && p1.getNPeces() > 15*4){
+        if(nivel == 4 && p1.getNPez(1) > 14 && p1.getNPez(5) > 14 && p1.getNPez(2) > 14 && p1.getNPez(4) > 14){
             pinta = true;
             refres = true;
             removeObject(level);
             nivel = 5;
             p1.setPeces(0);
+            p1.resetNpeces();
         }
         
         if(nivel == 5 && p1.getNPeces() > 2){
@@ -324,6 +334,7 @@ public class Escenario extends ScrollWorld
                 if(refres){
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
+                    iniciaPecesAmarillos();
                     iniciaPecesRojos();
                     refres = false;
                 }
@@ -349,6 +360,9 @@ public class Escenario extends ScrollWorld
                 if(refres){
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
+                    iniciaPecesMorados();
+                    iniciaPecesMorados();
+                    iniciaPecesAmarillos();
                     iniciaPecesMorados();
                     iniciaPecesMorados();
                     refres = false;
@@ -379,7 +393,6 @@ public class Escenario extends ScrollWorld
                     iniciaPezLargo();
                     iniciaPecesMorados();
                     iniciaPecesGlobo();
-                    iniciaPecesRojos();
                     refres = false;
                 }
             break;
@@ -394,8 +407,11 @@ public class Escenario extends ScrollWorld
                     peces = this.getObjects(Pez.class);
                     this.removeObjects(peces);
                     iniciaPezEspada();
-                    iniciaPezEspada();
-                    iniciaPezEspada();
+                    iniciaPecesRojos();
+                    iniciaPecesGlobo();
+                    iniciaPecesRojos();
+                    iniciaPezLargo();
+                    iniciaPecesRojos();
                     refres = false;
                 }
         }  

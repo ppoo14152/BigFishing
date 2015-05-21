@@ -203,7 +203,7 @@ public class Tienda extends Actor
     {
         if(gas.getTouch())
         {
-            if(player.getDinero() > 10)
+            if(player.getDinero() >= 15)
             {
                 //player.aumentaGas(50);
                 bGas.add(50);
@@ -230,7 +230,7 @@ public class Tienda extends Actor
         
         if(An2.getTouch())
         {
-            if(player.getDinero() > 20)
+            if(player.getDinero() >= 20)
             {
                 player.restaDinero(20);
                 an.setAnzuelo("anzuelo2.png");
@@ -240,7 +240,7 @@ public class Tienda extends Actor
         
         if(An3.getTouch())
         {
-            if(player.getDinero() > 30)
+            if(player.getDinero() >= 30)
             {
                 player.restaDinero(30);
                 an.setAnzuelo("anzuelo3.png");
@@ -250,7 +250,7 @@ public class Tienda extends Actor
         
         if(An4.getTouch())
         {
-            if(player.getDinero() > 40)
+            if(player.getDinero() >= 40)
             {
                 player.restaDinero(40);
                 an.setAnzuelo("anzuelo4.png");
@@ -260,7 +260,7 @@ public class Tienda extends Actor
         
         if(An5.getTouch())
         {
-            if(player.getDinero() > 50)
+            if(player.getDinero() >= 50)
             {
                 player.restaDinero(50);
                 an.setAnzuelo("anzuelo5.png");
@@ -270,7 +270,7 @@ public class Tienda extends Actor
         
         if(An6.getTouch())
         {
-            if(player.getDinero() > 60)
+            if(player.getDinero() >= 60)
             {
                 player.restaDinero(60);
                 an.setAnzuelo("anzuelo6.png");
@@ -293,7 +293,7 @@ public class Tienda extends Actor
         
         if(v1.getTouch())
         {
-            if(player.getDinero() > 40)
+            if(player.getDinero() >= 40)
             {
                 player.restaDinero(40);
                 bVid.add(50);
@@ -303,7 +303,7 @@ public class Tienda extends Actor
         
         if(v2.getTouch())
         {
-            if(player.getDinero() > 20)
+            if(player.getDinero() >= 20)
             {
                 player.restaDinero(20);
                 bVid.add(20);
@@ -313,7 +313,7 @@ public class Tienda extends Actor
         
         if(e1.getTouch())
         {
-            if(player.getDinero() > 30)
+            if(player.getDinero() >= 30)
             {
                 player.restaDinero(30);
                 bVid.setMax(bVid.getMax()+50);
@@ -323,7 +323,7 @@ public class Tienda extends Actor
         
         if(e2.getTouch())
         {
-            if(player.getDinero() > 10)
+            if(player.getDinero() >= 10)
             {
                 player.restaDinero(10);
                 bVid.setMax(bVid.getMax()+25);

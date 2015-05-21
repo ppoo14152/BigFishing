@@ -17,7 +17,7 @@ public class PezLargo extends Pez
         direccion = true;
         img = new GreenfootImage("Pez7.png");
         img.mirrorHorizontally();
-        img.scale(img.getWidth()-10,img.getHeight()-10);
+        img.scale(img.getWidth()-80,img.getHeight()-30);
         this.setImage(img);
     }
     

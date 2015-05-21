@@ -18,6 +18,7 @@ public class Jugador extends ScrollActor
     private int vida;
     private int dinero;
     private int gas;
+    private int nPezAmarillo, nPezAzul, nPezVioleta, nPezRojo, nPezGlobo, nPezSerpiente, nPezVagabundo, nTiburon;
     private UserInfo punt;
     
     /**
@@ -28,6 +29,7 @@ public class Jugador extends ScrollActor
     {
         bajaV = false;
         nPeces = 0;
+        nPezAmarillo = nPezAzul = nPezVioleta = nPezRojo = nPezGlobo = nPezSerpiente = nPezVagabundo = nTiburon = 0;
         dinero = 25;
         ju = new GreenfootImage(n);
         this.setImage(ju);
@@ -48,6 +50,7 @@ public class Jugador extends ScrollActor
             if(((Pez)pez).getAgresivo()>10){
                 bajaV = true;
             }
+            aumentaContadores();
             getWorld().removeObject(pez);
             nPeces++;
             if(anzuelo != null){
@@ -176,30 +179,74 @@ public class Jugador extends ScrollActor
          dinero -=cant;
      }
      
-     public void aumentaGas(int cant)
-     {        
-         gas = gas + cant;
-         if(gas > 100)
-         {
-            gas = 100;
+     /**
+      * Metodo para reinicial los contadores de peces capturados por el jugador en el nivel presente
+      */
+     
+     public void resetNpeces(){
+         nPezAmarillo = nPezAzul = nPezVioleta = nPezRojo = nPezGlobo = nPezSerpiente = nPezVagabundo = nTiburon = 0;
+     }
+     
+     /**
+      * Metodo para obtener el numero de peces capturados en el nivel
+      * 0 - Pez Amarillo
+      * 1 - Pez Azul
+      * 2 - Pez Violeta
+      * 3 - Pez Rojo
+      * 4 - Pez Globo
+      * 5 - Pez Serpiente
+      * 6 - Pez Vagabundo
+      * 7 - Pez Tiburon
+      * @param n indica cual es el valor del pez que va a retornar
+      */
+     
+     public int getNPez(int n){
+         switch(n){
+             case 0:
+                return nPezAmarillo;
+             case 1:
+                return nPezAzul;
+             case 2:
+                return nPezVioleta;
+             case 3:
+                return nPezRojo;
+             case 4:
+                return nPezGlobo;
+             case 5:
+                return nPezSerpiente;
+             case 6:
+                return nPezVagabundo;
+             case 7:
+                return nTiburon;
+             default:
+                return 0;
          }
      }
      
-     public void aumentaVida(int cant)
-     {
-         vida += cant;
-         if(vida > 100)
-         {
-             vida = 100;
-         }
-     }
-     
-     public void aumentaEnergia(int cant)
-     {
-         energia += cant;
-         if(energia > 100)
-         {
-             energia = 100;
-         }
-     }
+     private void aumentaContadores(){
+        if(((Pez)pez).getAgresivo()==1){
+            nPezAmarillo++;
+        }
+        if(((Pez)pez).getAgresivo()==2){
+            nPezAzul++;
+        }
+        if(((Pez)pez).getAgresivo()==4){
+            nPezVioleta++;
+        }
+        if(((Pez)pez).getAgresivo()==15){
+            nPezRojo++;
+        }
+        if(((Pez)pez).getAgresivo()==11){
+            nPezGlobo++;
+        }
+        if(((Pez)pez).getAgresivo()==13){
+            nPezSerpiente++;
+        }
+        if(((Pez)pez).getAgresivo()==16){
+            nPezVagabundo++;
+        }
+        if(((Pez)pez).getAgresivo()==10){
+            nTiburon++;
+        }
+    }
 }    

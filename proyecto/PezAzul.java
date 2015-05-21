@@ -15,7 +15,7 @@ public class PezAzul extends Pez
      * Crea un pez azul en una zona del mundo
      */
     public PezAzul(){
-        super(1+Greenfoot.getRandomNumber(4),5,3,4, 5+Greenfoot.getRandomNumber(4));
+        super(1+Greenfoot.getRandomNumber(4),5,3,2, 5+Greenfoot.getRandomNumber(4));
         direccion = true;
         img = new GreenfootImage("pez2.png");
         img.mirrorHorizontally();

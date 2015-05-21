@@ -14,7 +14,7 @@ public class PezEspada extends Pez
      * Crea un pez espada en una zona del mundo
      */
     public PezEspada(){
-        super(1+Greenfoot.getRandomNumber(8),10,10,11, 5+Greenfoot.getRandomNumber(15));
+        super(1+Greenfoot.getRandomNumber(8),10,10,20, 5+Greenfoot.getRandomNumber(15));
         direccion = true;
         img = new GreenfootImage("Pez5.png");
         img.mirrorHorizontally();
